@@ -1,0 +1,12 @@
+<resources>
+	<string name="hello_world">Hello world!</string>
+	<string name="action_settings">Settings</string>
+	<string name="login_activity">The LXM Store</string>
+	<string name="wallet_activity">My Wallet</string>
+	<string name="notification_detail">Detail of a notification</string>
+	<string name="app">The LXM Store</string>
+    <string name="coupon_activity">Offer</string>
+    <string name="title_activity_main">The LXM Store</string>
+	<string name="drawer_open">Open navigation drawer</string>
+	<string name="drawer_close">Close navigation drawer</string>
+</resources>

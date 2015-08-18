@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient-android\4.3.3\39ba75b570e5f1535356e8a1bf920b1c6cc83a9a\httpclient-android-4.3.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="39ba75b570e5f1535356e8a1bf920b1c6cc83a9a">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\httpclient-android-4.3.3-e1f4d557dc6f5323de540e68f8d2f34336ac7045.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\com.squareup\otto\1.3.6\ee373b6d0d6ea36a0a9b0cbabaf16be7e7fc3e30\otto-1.3.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ee373b6d0d6ea36a0a9b0cbabaf16be7e7fc3e30">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\otto-1.3.6-13b60ed523450c2645f6f28a717cbc816089e8ac.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.liferay.mobile\liferay-android-oauth\1.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1cebdb9dfcc5435b2c154cee6ae6abad3e2a104e">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-6eacd4f22a2928e49d25cfee06ae7e5d5ca9ca61.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\de.keyboardsurfer.android.widget\crouton\1.8.5\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b81c788c5f175f94ddaac2f65e5d1726371e0963">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-b9a3f397f3032901c3c26920a1e2f9aab1fe6078.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\com.liferay.mobile\liferay-android-sdk\6.2.0.20\26531e218676a9522a1118e6b34b92db5019f6ea\liferay-android-sdk-6.2.0.20.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="26531e218676a9522a1118e6b34b92db5019f6ea">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\liferay-android-sdk-6.2.0.20-f628f966f76f35699e6082dd06f3cb72f56feb6e.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-f89f2d32e908810d5c9f7eb1a5d9dd0acc2da56b.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpmime\4.3.3\e02368d7b56c0c376f227378a4f77de62864d020\httpmime-4.3.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e02368d7b56c0c376f227378a4f77de62864d020">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\httpmime-4.3.3-f8279a846fe8632878fe76f697c585335bb69b0b.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.liferay.mobile\liferay-material-viewset\1.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2e3cb34b8d5216de74233975299b34964fac7e41">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-99cd6898cabd58d6a8732596608b3b97f8f11345.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.6\b7f0fc8f61ecadeb3695f0b9464755eee44374d4\commons-codec-1.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b7f0fc8f61ecadeb3695f0b9464755eee44374d4">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\commons-codec-1.6-adc2786b0c73f7a2a759edf19aed778c9bd1a8e9.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\6.5.87\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="95482e7c792a7c0d5a9d5461e97726bd54fe9549">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-03618fb508a5f4aa10728c64566cd7e409baa94a.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.0\7ff0e000d1e27e356567f56c92af3b8ab912636f\picasso-2.5.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7ff0e000d1e27e356567f56c92af3b8ab912636f">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\picasso-2.5.0-13b0680a04c06b43ede7355fde3d6cad96212430.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\oauth.signpost\signpost-commonshttp4\1.2.1.2\731e05de30cfeb1f41d417f886277f9597fe0f36\signpost-commonshttp4-1.2.1.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="731e05de30cfeb1f41d417f886277f9597fe0f36">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\signpost-commonshttp4-1.2.1.2-419b18760d56b68f652c6f975032a93cac6db73e.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-5eb8749f2c7b4d056e792da0b63dca1e3b52b14e.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0-bcb854050f70ddbd74f5e6fa37397708b48aa7f3.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-41eca6a4d4d038b3c4f69548296f46a3ed2a78c0.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.liferay.mobile\liferay-screens\1.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="171dfefa3b9907876c35d1e3c10b08b7303094b6">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-6f519715b0156c7d63e4c3a8d93b60dff5810cde.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-bdbb6e17c4d62e175dadf8f7b34c4254f635737c.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-3cea54b9b60ba37fd1e1e7ed56935425634dc0dc.jar" />
+    </item>
+    <item
+        jar="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\exploded-aar\com.liferay.mobile\liferay-push\1.0.2\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="44bf64b3a415537b09724552d6dd0a84d03dc6e6">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\classes-ce7b891a00a8ac657e5e7caa16728fa533cce783.jar" />
+    </item>
+    <item
+        jar="C:\Users\liferay\.gradle\caches\modules-2\files-2.1\oauth.signpost\signpost-core\1.2.1.2\bf95955dcf3d5a78c201e49b0c336787ea73f161\signpost-core-1.2.1.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="bf95955dcf3d5a78c201e49b0c336787ea73f161">
+        <dex dex="D:\repos\public\liferay-screens-master\android\samples\android\app\build\intermediates\pre-dexed\debug\signpost-core-1.2.1.2-bc33cac3286ce7ca2c379f7915e0ba0f9c3d6297.jar" />
+    </item>
+
+</items>

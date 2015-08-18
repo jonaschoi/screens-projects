@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liferay.mobile.pushnotifications" >
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/liferay"
+        android:label="@string/app"
+        android:theme="@style/Theme.AppCompat.Light" >
+        <activity
+            android:name=".activities.LoginActivity"
+            android:label="@string/login_activity" >
+        </activity>
+        <activity
+            android:name=".activities.WalletActivity"
+            android:label="@string/wallet_activity" />
+
+        <receiver
+            android:name=".notification.PushReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.liferay.mobile.push" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".notification.PushService" />
+
+        <activity
+            android:name=".activities.CouponActivity"
+            android:label="@string/coupon_activity" >
+        </activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -9,4 +9,8 @@
     <string name="title_activity_main">The LXM Store</string>
 	<string name="drawer_open">Open navigation drawer</string>
 	<string name="drawer_close">Close navigation drawer</string>
+
+	<integer name="ddl_recordset_id">21958</integer>
+	<integer name="ddl_structure_id">21957</integer>
+	<integer name="article_id_coupon1">21420</integer>
 </resources>

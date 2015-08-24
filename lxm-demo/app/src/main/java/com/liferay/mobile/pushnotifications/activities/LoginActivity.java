@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 
 	@Override
 	public void onLoginSuccess(User user) {
-		startActivity(new Intent(this, WalletActivity.class));
+		startActivity(new Intent(this, MainActivity.class));
 	}
 
 	@Override

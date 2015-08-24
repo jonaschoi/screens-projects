@@ -5,11 +5,6 @@
 	<integer name="liferay_company_id">20155</integer>
 	<integer name="liferay_group_id">20887</integer>
 
-	<integer name="ddl_recordset_id">21958</integer>
-	<integer name="ddl_structure_id">21957</integer>
-
-	<integer name="article_id">21420</integer>
-
 	<string name="anonymous_user">push@liferay.com</string>
 	<string name="anonymous_password">test</string>
 

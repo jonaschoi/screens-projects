@@ -64,8 +64,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                if (position == 0) {
+                    Intent myIntent = new Intent(view.getContext(), MainActivity.class);
+                    startActivity(myIntent);
+                }
+
                 if (position == 1) {
-                    Intent myIntent = new Intent(view.getContext(), LoginActivity.class);
+                    Intent myIntent = new Intent(view.getContext(), WalletActivity.class);
                     startActivity(myIntent);
                 }
             }

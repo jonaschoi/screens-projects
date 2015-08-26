@@ -1,0 +1,22 @@
+<resources>
+    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Screens Demo</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="title_activity_ddlform">DDLFormActivity</string>
+
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+    <string name="nav_1">Web Content</string>
+    <string name="nav_2">DDL Form</string>
+    <string name="nav_3">DDL List</string>
+    <string name="nav_4">Calendar</string>
+
+    <string name="default_user">test</string>
+    <string name="default_password">test</string>
+
+    <integer name="article_landing">24803</integer>
+    <integer name="ddl_form_record">21416</integer>
+    <integer name="ddl_form_structure">21414</integer>
+</resources>

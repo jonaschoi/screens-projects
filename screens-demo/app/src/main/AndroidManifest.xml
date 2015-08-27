@@ -24,6 +24,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.liferay.screensdemo.MainActivity" />
         </activity>
+
+        <
+        <
+        <
+        <
+        <
+        <
+
+        < HEAD
         <activity
             android:name=".DDLFormActivity"
             android:label="@string/title_activity_ddlform"
@@ -32,6 +41,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.liferay.screensdemo.MainActivity"/>
         </activity>
+        =======
+        >>>>>>> origin/master
     </application>
 
 </manifest>

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="liferay-screens-1.2.1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.liferay.mobile/liferay-screens/1.2.1/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.liferay.mobile/liferay-screens/1.2.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.liferay.mobile/liferay-screens/1.2.1/35251f2b18d602e31ddff3fb08580855fbd36367/liferay-screens-1.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -15,6 +15,10 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import com.liferay.ldxdemo.R;
+import com.liferay.mobile.screens.base.list.BaseListScreenlet;
+import com.liferay.mobile.screens.ddl.model.Record;
+
+import java.util.List;
 
 /**
  * @author dipenp
@@ -23,7 +27,7 @@ import com.liferay.ldxdemo.R;
  * We are going to extend all our other activites from this BaseActivity so that every activity will have Navigation Drawer in it.
  * This activity layout contain one frame layout in which we will add our child activity layout.    
  */
-public class NavDrawerActivity extends AppCompatActivity {
+public abstract class NavDrawerActivity extends AppCompatActivity {
 
 		/**
 		 *  Frame layout: Which is going to be used as parent layout for child activity layout.
@@ -41,8 +45,7 @@ public class NavDrawerActivity extends AppCompatActivity {
 		/**
 		 * List item array for navigation drawer items.
 		 * */
-		protected String[] listArray = { "Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes",
-		};
+		protected String[] listArray = { "Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
 
 		/**
 		 * Static variable for selected item position. Which can be used in child activity to know which item is selected from the list.

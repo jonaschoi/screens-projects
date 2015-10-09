@@ -1,12 +1,27 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:liferay="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff">
 
     <ImageView
-        android:id="@+id/image_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/imgo"
+        android:src="@drawable/wallet"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 
-</LinearLayout>
+    <com.liferay.mobile.screens.ddl.list.DDLListScreenlet
+        android:id="@+id/wallet_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffffff"
+        android:layout_below="@id/imgo"
+        liferay:labelFields="offerName"
+        liferay:recordSetId="@integer/ddl_recordset_id"
+        liferay:structureId="@integer/ddl_structure_id"
+        liferay:layoutId="@layout/ddl_list_material" />
+
+</RelativeLayout>

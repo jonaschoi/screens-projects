@@ -15,42 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.CouponActivity"
-            android:label="@string/title_activity_coupon"
-            android:parentActivityName=".activities.WalletActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.WalletActivity" />
-        </activity>
-        <activity
-            android:name=".activities.WelcomeActivity"
-            android:label="@string/title_activity_welcome"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity" />
-        </activity>
-        <activity
-            android:name=".activities.NavDrawerActivity"
-            android:label="@string/title_activity_nav_drawer"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity" />
-        </activity>
-        <activity
-            android:name=".activities.WalletActivity"
-            android:label="@string/title_activity_wallet"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity" />
-        </activity>
+        <activity android:name="com.liferay.ldxdemo.activities.NavDrawerActivity"/>
+        <activity android:name="com.liferay.ldxdemo.activities.CategoryActivity" />
+        <activity android:name="com.liferay.ldxdemo.activities.WalletActivity" />
+        <activity android:name="com.liferay.ldxdemo.activities.MenActivity" />
+        <activity android:name="com.liferay.ldxdemo.activities.WomenActivity" />
+        <activity android:name="com.liferay.ldxdemo.activities.KidsActivity" />
+        <activity android:name="com.liferay.ldxdemo.activities.ShoesActivity" />
     </application>
 
 </manifest>

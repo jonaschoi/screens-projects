@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements LoginListener {
 
     @Override
     public void onLoginSuccess(User user) {
-        startActivity(new Intent(this, WelcomeActivity.class));
+        startActivity(new Intent(this, CategoryActivity.class));
     }
 
     @Override

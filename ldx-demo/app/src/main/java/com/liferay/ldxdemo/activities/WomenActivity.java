@@ -23,7 +23,8 @@ public class WomenActivity extends NavDrawerActivity {
 		 * Setting title and itemChecked  
 		 */
 		mDrawerList.setItemChecked(position, true);
-		setTitle(listArray[position]);
+		setTitle(R.string.title_section4);
+//		setTitle(listArray[position]);
 		
 	}
 }

@@ -3,10 +3,13 @@ package com.liferay.ldxdemo.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.liferay.ldxdemo.R;
 import com.liferay.mobile.screens.auth.login.LoginListener;
 import com.liferay.mobile.screens.auth.login.LoginScreenlet;
@@ -14,7 +17,11 @@ import com.liferay.mobile.screens.context.User;
 
 public class MainActivity extends AppCompatActivity implements LoginListener {
 
-    @Override
+	private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+	private static final String TAG = "MainActivity";
+
+
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -64,4 +71,24 @@ public class MainActivity extends AppCompatActivity implements LoginListener {
         EditText password = (EditText) findViewById(R.id.liferay_password);
         password.setText(R.string.default_password);
     }
+
+	/**
+	 * Check the device to make sure it has the Google Play Services APK. If
+	 * it doesn't, display a dialog that allows users to download the APK from
+	 * the Google Play Store or enable it in the device's system settings.
+	 */
+	private boolean checkPlayServices() {
+		int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+		if (resultCode != ConnectionResult.SUCCESS) {
+			if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+				GooglePlayServicesUtil.getErrorDialog(resultCode, this,
+						PLAY_SERVICES_RESOLUTION_REQUEST).show();
+			} else {
+				Log.i(TAG, "This device is not supported.");
+				finish();
+			}
+			return false;
+		}
+		return true;
+	}
 }

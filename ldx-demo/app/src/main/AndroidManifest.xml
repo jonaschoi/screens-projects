@@ -16,22 +16,80 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.NavDrawerActivity" />
-        <activity android:name=".activities.CategoryActivity" />
-        <activity android:name=".activities.WalletActivity" />
-        <activity android:name=".activities.MenActivity" />
-        <activity android:name=".activities.WomenActivity" />
-        <activity android:name=".activities.KidsActivity" />
-        <activity android:name=".activities.ShoesActivity" />
+        <activity
+            android:name=".activities.NavDrawerActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liferay.ldxdemo.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.CategoryActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liferay.ldxdemo.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.WalletActivity"
+            android:parentActivityName=".activities.CategoryActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liferay.ldxdemo.activities.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".activities.MenActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liferay.ldxdemo.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.WomenActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liferay.ldxdemo.activities.MainActivity" />
+        </activity>
+        <activity android:name=".activities.KidsActivity"
+                  android:parentActivityName=".activities.MainActivity"
+                  android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liferay.ldxdemo.activities.MainActivity" />
+        </activity>
+        <activity android:name=".activities.ShoesActivity"
+                  android:parentActivityName=".activities.MainActivity"
+                  android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.liferay.ldxdemo.activities.MainActivity" />
+        </activity>
         <activity
             android:name=".activities.CouponActivity"
-            android:label="@string/title_activity_coupon"
+            android:label="@string/title_activity_coupon1"
             android:parentActivityName=".activities.WalletActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.liferay.ldxdemo.activities.WalletActivity" />
         </activity>
+        <receiver
+            android:name=".notification.PushReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.liferay.mobile.push" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".notification.PushService" />
     </application>
 
 </manifest>

@@ -12,7 +12,6 @@ import com.liferay.mobile.screens.base.list.BaseListScreenlet;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.ddl.list.DDLEntry;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
-import com.liferay.mobile.screens.ddl.model.Record;
 import com.liferay.mobile.screens.push.AbstractPushActivity;
 
 import com.liferay.ldxdemo.R;
@@ -26,10 +25,6 @@ import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 
-/**
- * @author dipenp
- *
- */
 public class WalletActivity extends AbstractPushActivity implements BaseListListener<DDLEntry> {
 
 	private DDLListScreenlet ddlList;
@@ -38,11 +33,12 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_wallet);
+		setTitle(R.string.title_section2);
 
 //		/**
 //		 * Adding our layout to parent class frame layout.
 //		 */
-//		getLayoutInflater().inflate(R.layout.activity_wallet, frameLayout);
+//		getLayoutInflater().inflate(R.layout.activity_wallet, NavDrawerActivity.frameLayout);
 //
 //		/**
 //		 * Setting title and itemChecked

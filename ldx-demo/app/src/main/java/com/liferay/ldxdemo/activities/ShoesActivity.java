@@ -23,7 +23,8 @@ public class ShoesActivity extends NavDrawerActivity {
 		 * Setting title and itemChecked  
 		 */
 		mDrawerList.setItemChecked(position, true);
-		setTitle(listArray[position]);
+		setTitle(R.string.title_section6);
+//		setTitle(listArray[position]);
 
 	}
 }

@@ -25,7 +25,5 @@ public class CategoryActivity extends NavDrawerActivity {
 		mDrawerList.setItemChecked(position, true);
 		setTitle(R.string.title_section1);
 //		setTitle(listArray[position]);
-
-//		findViewById(R.id.image_view).setBackgroundResource(R.drawable.image1);
 	}
 }

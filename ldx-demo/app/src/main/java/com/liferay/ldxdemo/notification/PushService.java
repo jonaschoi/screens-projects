@@ -28,7 +28,7 @@ public class PushService extends AbstractPushService {
 	protected void processJSONNotification(final JSONObject json) throws Exception {
 		boolean creation = json.has("newNotification") && json.getBoolean("newNotification");
 		String titleHeader = (creation ? "New" : "Updated") + " notification: ";
-		String title = "The LXM Store";
+		String title = getString(R.string.app_slogan);
 		String description = "Near our store today? Hurry in and use your 25% off our Spring Shoe Sale! Click for details.";
 		String photo = getString(json, "photo");
 

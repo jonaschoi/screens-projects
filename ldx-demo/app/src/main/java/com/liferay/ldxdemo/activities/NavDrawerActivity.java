@@ -70,7 +70,7 @@ public abstract class NavDrawerActivity extends AppCompatActivity {
 			/** Called when a drawer has settled in a completely open state. */
 			public void onDrawerOpened(View drawerView) {
 				super.onDrawerOpened(drawerView);
-				getSupportActionBar().setTitle(getString(R.string.app_name));
+				getSupportActionBar().setTitle(getString(R.string.app_slogan));
 				invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
 			}
 

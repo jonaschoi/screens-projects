@@ -1,11 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:liferay="http://schemas.android.com/apk/res-auto"
-    android:background="#ffffff"
-    tools:context=".MainActivity">
+              xmlns:liferay="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff"
+              android:orientation="vertical"
+              tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/background"
@@ -19,9 +19,9 @@
         android:id="@+id/login_screenlet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        liferay:layoutId="@layout/login_material"
         android:layout_below="@id/background"
-        liferay:basicAuthMethod="screen_name"/>
+        android:paddingTop="0dp"
+        liferay:basicAuthMethod="screen_name"
+        liferay:layoutId="@layout/login_material"/>
 
 </LinearLayout>

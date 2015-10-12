@@ -3,8 +3,8 @@ package com.liferay.ldxdemo.activities;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,41 +16,32 @@ import android.widget.ListView;
 
 import com.liferay.ldxdemo.R;
 
-/**
- * @author dipenp
- *
- * This activity will add Navigation Drawer for our application and all the code related to navigation drawer.
- * We are going to extend all our other activites from this BaseActivity so that every activity will have Navigation Drawer in it.
- * This activity layout contain one frame layout in which we will add our child activity layout.    
- */
 public abstract class NavDrawerActivity extends AppCompatActivity {
 
+	protected static int position;
 	protected ListView mDrawerList;
 	protected DrawerLayout mDrawerLayout;
+	protected FrameLayout frameLayout;
+	protected String[] listArray = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
 	private ArrayAdapter<String> mAdapter;
 	private ActionBarDrawerToggle mDrawerToggle;
-	protected FrameLayout frameLayout;
-	protected static int position;
-	protected String[] listArray = { "Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes" };
 
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.navigation_drawer_base_layout);
 
-		@Override
-		protected void onCreate(Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
-			setContentView(R.layout.navigation_drawer_base_layout);
+		frameLayout = (FrameLayout) findViewById(R.id.content_frame);
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		mDrawerList = (ListView) findViewById(R.id.nav_list);
 
-			frameLayout = (FrameLayout)findViewById(R.id.content_frame);
-			mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-			mDrawerList = (ListView) findViewById(R.id.nav_list);
-//			mActivityTitle = getTitle().toString();
+		addDrawerItems();
+		setupDrawer();
 
-			addDrawerItems();
-			setupDrawer();
-
-			// enable ActionBar app icon to behave as action to toggle nav drawer
-			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-			getSupportActionBar().setHomeButtonEnabled(true);
-		}
+		// enable ActionBar app icon to behave as action to toggle nav drawer
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setHomeButtonEnabled(true);
+	}
 
 	protected void addDrawerItems() {
 		mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listArray);
@@ -128,8 +119,8 @@ public abstract class NavDrawerActivity extends AppCompatActivity {
 
 	protected void openActivity(int position) {
 
-	mDrawerLayout.closeDrawer(mDrawerList);
-	NavDrawerActivity.position = position; //Setting currently selected position in this field so that it will be available in our child activities.
+		mDrawerLayout.closeDrawer(mDrawerList);
+		NavDrawerActivity.position = position; //Setting currently selected position in this field so that it will be available in our child activities.
 
 		switch (position) {
 			case 0:

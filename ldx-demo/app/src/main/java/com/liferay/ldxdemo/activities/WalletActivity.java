@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.liferay.ldxdemo.R;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.android.task.callback.typed.JSONObjectAsyncTaskCallback;
 import com.liferay.mobile.android.v62.ddlrecordset.DDLRecordSetService;
@@ -13,8 +14,6 @@ import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.ddl.list.DDLEntry;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
 import com.liferay.mobile.screens.push.AbstractPushActivity;
-
-import com.liferay.ldxdemo.R;
 import com.liferay.mobile.screens.util.LiferayLogger;
 import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
@@ -105,8 +104,7 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 					Crouton.clearCroutonsForActivity(WalletActivity.this);
 
 					startActivity(intent);
-				}
-				catch (JSONException e) {
+				} catch (JSONException e) {
 					LiferayLogger.e("error parsing JSON", e);
 				}
 			}

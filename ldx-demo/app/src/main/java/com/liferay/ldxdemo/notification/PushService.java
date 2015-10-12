@@ -39,18 +39,18 @@ public class PushService extends AbstractPushService {
 		Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-			.setContentTitle(title)
-			.setContentText(description)
-			.setAutoCancel(true)
-			.setSound(uri)
-			.setVibrate(new long[]{2000, 1000, 2000, 1000})
-			.setSmallIcon(R.drawable.liferay_glyph);
+				.setContentTitle(title)
+				.setContentText(description)
+				.setAutoCancel(true)
+				.setSound(uri)
+				.setVibrate(new long[]{2000, 1000, 2000, 1000})
+				.setSmallIcon(R.drawable.liferay_glyph);
 
 		builder.setContentIntent(createPendingIntentForNotifications());
 
 		Notification notification = builder.build();
 		NotificationManager notificationManager =
-			(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+				(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		notificationManager.notify(NOTIFICATION_ID, notification);
 	}
 

@@ -2,9 +2,7 @@
     <string name="app_name">The LDX Store</string>
     <string name="app_slogan">For Life Haberdashery</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="dummy_string">Dummy String</string>
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
@@ -26,7 +24,5 @@
     <integer name="article_id_coupon1">21420</integer>
     <integer name="ddl_recordset_id">21958</integer>
     <integer name="ddl_structure_id">21957</integer>
-
-    <!--<string name="action_example">Example action</string>-->
 
 </resources>

@@ -1,6 +1,8 @@
 # screens-projects
 
 Repository of Screens Projects
-- LXM-Demo
-- Screens Demo
 - LDX-Demo
+  - Refactor of LXM Demo with updated icons, nav drawer, and more content
+- LXM-Demo
+  - Original Liferay Screens Demo
+- Screens Demo

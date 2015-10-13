@@ -19,9 +19,9 @@
         android:id="@+id/login_screenlet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        liferay:layoutId="@layout/login_material"
         android:layout_below="@id/background"
-        liferay:basicAuthMethod="screen_name"/>
+        android:paddingTop="0dp"
+        liferay:basicAuthMethod="screen_name"
+        liferay:layoutId="@layout/login_material"/>
 
 </LinearLayout>

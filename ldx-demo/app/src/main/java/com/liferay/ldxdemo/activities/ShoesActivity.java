@@ -6,19 +6,18 @@ import com.liferay.ldxdemo.R;
 
 /**
  * @author dipenp
- *
  */
 public class ShoesActivity extends NavDrawerActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		/**
 		 * Adding our layout to parent class frame layout.
 		 */
 		getLayoutInflater().inflate(R.layout.activity_shoes, frameLayout);
-		
+
 		/**
 		 * Setting title and itemChecked  
 		 */

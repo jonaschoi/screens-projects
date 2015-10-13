@@ -6,7 +6,6 @@ import com.liferay.ldxdemo.R;
 
 /**
  * @author dipenp
- *
  */
 public class CategoryActivity extends NavDrawerActivity {
 

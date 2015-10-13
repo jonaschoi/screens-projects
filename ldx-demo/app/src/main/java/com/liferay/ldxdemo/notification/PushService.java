@@ -28,7 +28,7 @@ public class PushService extends AbstractPushService {
 	protected void processJSONNotification(final JSONObject json) throws Exception {
 		boolean creation = json.has("newNotification") && json.getBoolean("newNotification");
 		String titleHeader = (creation ? "New" : "Updated") + " notification: ";
-		String title = "The LXM Store";
+		String title = getString(R.string.app_slogan);
 		String description = "Near our store today? Hurry in and use your 25% off our Spring Shoe Sale! Click for details.";
 		String photo = getString(json, "photo");
 
@@ -39,18 +39,18 @@ public class PushService extends AbstractPushService {
 		Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-			.setContentTitle(title)
-			.setContentText(description)
-			.setAutoCancel(true)
-			.setSound(uri)
-			.setVibrate(new long[]{2000, 1000, 2000, 1000})
-			.setSmallIcon(R.drawable.liferay_glyph);
+				.setContentTitle(title)
+				.setContentText(description)
+				.setAutoCancel(true)
+				.setSound(uri)
+				.setVibrate(new long[]{2000, 1000, 2000, 1000})
+				.setSmallIcon(R.drawable.liferay_glyph);
 
 		builder.setContentIntent(createPendingIntentForNotifications());
 
 		Notification notification = builder.build();
 		NotificationManager notificationManager =
-			(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+				(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		notificationManager.notify(NOTIFICATION_ID, notification);
 	}
 

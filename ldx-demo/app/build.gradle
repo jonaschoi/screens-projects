@@ -31,6 +31,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.liferay.mobile:liferay-screens:1.1.+'
     compile 'com.liferay.mobile:liferay-material-viewset:1.1.0'
+    compile 'com.liferay.mobile:liferay-push:1.0.2'
     compile 'com.android.support:design:23.0.1'
     compile 'org.altbeacon:android-beacon-library:2.6.1'
 }

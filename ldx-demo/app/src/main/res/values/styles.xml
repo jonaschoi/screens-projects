@@ -2,13 +2,21 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/material_primary_crouton</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.AppBarOverlay" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse"/>
+    <style name="AppTheme.PopupOverlay" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse"/>
+    <style name="MyToolbarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="theme">@style/MyToolbarTextStyle</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+    <style name="MyToolbarTextStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">#FFFFFF</item>
+    </style>
 
 </resources>

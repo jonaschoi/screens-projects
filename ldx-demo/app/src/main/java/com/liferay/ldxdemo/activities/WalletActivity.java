@@ -5,14 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.liferay.ldxdemo.R;
+import com.liferay.mobile.android.callback.typed.JSONObjectCallback;
 import com.liferay.mobile.android.service.Session;
-import com.liferay.mobile.android.task.callback.typed.JSONObjectAsyncTaskCallback;
 import com.liferay.mobile.android.v62.ddlrecordset.DDLRecordSetService;
 import com.liferay.mobile.screens.base.list.BaseListListener;
 import com.liferay.mobile.screens.base.list.BaseListScreenlet;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.ddl.list.DDLEntry;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
+import com.liferay.mobile.screens.ddl.model.Record;
 import com.liferay.mobile.screens.push.AbstractPushActivity;
 import com.liferay.mobile.screens.util.LiferayLogger;
 import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
@@ -24,7 +25,7 @@ import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 
-public class WalletActivity extends AbstractPushActivity implements BaseListListener<DDLEntry> {
+public class WalletActivity extends AbstractPushActivity implements BaseListListener<Record> {
 
 	private DDLListScreenlet ddlList;
 
@@ -61,24 +62,23 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 
 	}
 
+	@Override
+	public void onListPageReceived(BaseListScreenlet source, int page, List<Record> entries, int rowCount) {
+
+	}
+
 	protected Session getDefaultSession() {
 		return SessionContext.createSessionFromCurrentSession();
 	}
 
 	@Override
-	public void onListPageReceived(BaseListScreenlet source, int page, List<DDLEntry> entries, int rowCount) {
-
-	}
-
-
-	@Override
-	public void onListItemSelected(DDLEntry element, View view) {
+	public void onListItemSelected(Record element, View view) {
 		loadDDLForm(element);
 	}
 
-	private void loadDDLForm(DDLEntry element) {
-		final Integer recordId = (Integer) (element.getAttributes("recordId"));
-		final Integer recordSetId = (Integer) (element.getAttributes("recordSetId"));
+	private void loadDDLForm(Record element) {
+		final Integer recordId = (Integer) (element.getModelAttributes().get("recordId"));
+		final Integer recordSetId = (Integer) (element.getModelAttributes().get("recordSetId"));
 
 		try {
 			Session session = SessionContext.createSessionFromCurrentSession();
@@ -90,8 +90,8 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 		}
 	}
 
-	private JSONObjectAsyncTaskCallback getCallback(final Integer recordId, final Integer recordSetId) {
-		return new JSONObjectAsyncTaskCallback() {
+	private JSONObjectCallback getCallback(final Integer recordId, final Integer recordSetId) {
+		return new JSONObjectCallback() {
 
 			@Override
 			public void onSuccess(JSONObject result) {
@@ -136,5 +136,20 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 	@Override
 	protected String getSenderId() {
 		return getString(R.string.sender_id);
+	}
+
+	@Override
+	public void loadingFromCache(boolean success) {
+
+	}
+
+	@Override
+	public void retrievingOnline(boolean triedInCache, Exception e) {
+
+	}
+
+	@Override
+	public void storingToCache(Object object) {
+
 	}
 }

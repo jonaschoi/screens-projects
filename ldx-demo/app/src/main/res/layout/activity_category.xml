@@ -25,6 +25,7 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:paddingTop="0dp"
-        liferay:articleId="@integer/article_id_category" />
+        liferay:articleId="@integer/article_id_category"
+        liferay:offlinePolicy="CACHE_FIRST"/>
 
 </RelativeLayout>

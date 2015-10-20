@@ -19,7 +19,7 @@ public class WomenActivity extends NavDrawerActivity {
 		getLayoutInflater().inflate(R.layout.activity_women, frameLayout);
 
 		/**
-		 * Setting title and itemChecked  
+		 * Setting title and itemChecked
 		 */
 		mDrawerList.setItemChecked(position, true);
 		setTitle(R.string.title_section4);

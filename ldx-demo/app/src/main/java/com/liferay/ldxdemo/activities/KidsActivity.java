@@ -19,7 +19,7 @@ public class KidsActivity extends NavDrawerActivity {
 		getLayoutInflater().inflate(R.layout.activity_kids, frameLayout);
 
 		/**
-		 * Setting title and itemChecked  
+		 * Setting title and itemChecked
 		 */
 		mDrawerList.setItemChecked(position, true);
 		setTitle(R.string.title_section5);

@@ -1,10 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:liferay="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:liferay="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
@@ -13,7 +13,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:background="@drawable/liferay_logo"/>
+        android:background="@drawable/liferay_logo" />
 
     <com.liferay.mobile.screens.auth.login.LoginScreenlet
         android:id="@+id/login_screenlet"
@@ -22,6 +22,6 @@
         android:layout_below="@id/background"
         android:paddingTop="0dp"
         liferay:basicAuthMethod="screen_name"
-        liferay:layoutId="@layout/login_material"/>
+        liferay:layoutId="@layout/login_material" />
 
 </LinearLayout>

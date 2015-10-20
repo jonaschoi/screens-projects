@@ -19,7 +19,7 @@ public class ShoesActivity extends NavDrawerActivity {
 		getLayoutInflater().inflate(R.layout.activity_shoes, frameLayout);
 
 		/**
-		 * Setting title and itemChecked  
+		 * Setting title and itemChecked
 		 */
 		mDrawerList.setItemChecked(position, true);
 		setTitle(R.string.title_section6);

@@ -6,5 +6,5 @@
 /build
 /captures
 
-*.class
+*.iml
 .idea/

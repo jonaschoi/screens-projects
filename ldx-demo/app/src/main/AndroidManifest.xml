@@ -1,111 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.liferay.ldxdemo"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liferay.ldxdemo">
 
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
-        android:required="true"/>
+        android:required="true" />
 
     <application
+        android:name=".app.ShopApplication"
         android:allowBackup="true"
         android:icon="@drawable/liferay_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-          <activity
+        <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.NavDrawerActivity"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activities.CategoryActivity"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activities.WalletActivity"
-            android:parentActivityName=".activities.CategoryActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.CategoryActivity"/>
-        </activity>
+            android:theme="@style/AppTheme" />
 
         <receiver
             android:name=".notification.PushReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
-                <category android:name="com.liferay.mobile.push"/>
+                <category android:name="com.liferay.mobile.push" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".notification.PushService"/>
+        <service android:name=".notification.PushService" />
 
-        <activity
-            android:name=".activities.MenActivity"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activities.WomenActivity"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activities.KidsActivity"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activities.ShoesActivity"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.MainActivity"/>
-        </activity>
-        <activity
-            android:name=".activities.CouponActivity"
-            android:label="@string/title_activity_coupon1"
-            android:parentActivityName=".activities.WalletActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.liferay.ldxdemo.activities.WalletActivity"/>
-        </activity>
         <activity
             android:name=".beacon.BeaconReceiver"
             android:label="@string/title_activity_beacon_receiver"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

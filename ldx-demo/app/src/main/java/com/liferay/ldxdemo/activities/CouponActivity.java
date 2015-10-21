@@ -1,21 +1,32 @@
 package com.liferay.ldxdemo.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.liferay.ldxdemo.R;
 
-public class CouponActivity extends AppCompatActivity {
+public class CouponActivity extends Fragment {
 
+//		setTitle(R.string.title_activity_coupon1);
+
+	public static CouponActivity newInstance(Integer recordId, Integer recordSetId, int ddmStructureId) {
+		Bundle args = new Bundle();
+		args.putInt("recordId", recordId);
+		args.putInt("recordSetId", recordSetId);
+		args.putInt("ddmStructureId", ddmStructureId);
+		CouponActivity fragment = new CouponActivity();
+		fragment.setArguments(args);
+		return fragment;
+	}
+
+	@Nullable
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_coupon);
-//		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//		setSupportActionBar(toolbar);
-
-//		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		setTitle(R.string.title_activity_coupon1);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.activity_coupon, container, false);
 	}
 
 }

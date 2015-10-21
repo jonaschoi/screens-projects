@@ -1,28 +1,29 @@
 package com.liferay.ldxdemo.activities;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.liferay.ldxdemo.R;
 
 /**
  * @author dipenp
  */
-public class CategoryActivity extends NavDrawerActivity {
+public class CategoryActivity extends Fragment {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		/**
-		 * Adding our layout to parent class frame layout.
-		 */
-		getLayoutInflater().inflate(R.layout.activity_category, frameLayout);
-
-		/**
-		 * Setting title and itemChecked
-		 */
-		mDrawerList.setItemChecked(position, true);
-		setTitle(R.string.title_section1);
-//		setTitle(listArray[position]);
+	public static CategoryActivity newInstance() {
+		return new CategoryActivity();
 	}
+
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.activity_category, container, false);
+	}
+
+//		setTitle(R.string.title_section1);
+////		setTitle(listArray[position]);
 }

@@ -1,8 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:liferay="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#ffffff">
+    xmlns:liferay="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <ImageView
         android:id="@+id/imgo"
@@ -11,7 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/wallet"/>
+        android:src="@drawable/wallet" />
 
     <com.liferay.mobile.screens.ddl.list.DDLListScreenlet
         android:id="@+id/wallet_default"
@@ -22,6 +22,6 @@
         liferay:labelFields="offerName"
         liferay:layoutId="@layout/ddl_list_material"
         liferay:recordSetId="@integer/ddl_recordset_id"
-        liferay:structureId="@integer/ddl_structure_id"/>
+        liferay:structureId="@integer/ddl_structure_id" />
 
 </RelativeLayout>

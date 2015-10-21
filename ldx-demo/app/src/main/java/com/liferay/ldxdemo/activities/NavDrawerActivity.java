@@ -1,11 +1,10 @@
 package com.liferay.ldxdemo.activities;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +14,17 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import com.liferay.ldxdemo.R;
+import com.liferay.mobile.android.service.Session;
+import com.liferay.mobile.screens.context.SessionContext;
+import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
+import com.liferay.mobile.screens.push.AbstractPushActivity;
+import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
-public abstract class NavDrawerActivity extends AppCompatActivity {
+import org.json.JSONObject;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+
+public class NavDrawerActivity extends AbstractPushActivity {
 
 	protected static int position;
 	protected ListView mDrawerList;
@@ -41,16 +49,28 @@ public abstract class NavDrawerActivity extends AppCompatActivity {
 		// enable ActionBar app icon to behave as action to toggle nav drawer
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
+
+		getSupportFragmentManager().
+				beginTransaction().
+				replace(R.id.content_frame, CategoryActivity.newInstance()).
+				addToBackStack("category").
+				commit();
+	}
+
+	@Override
+	protected Session getDefaultSession() {
+		return SessionContext.createSessionFromCurrentSession();
 	}
 
 	protected void addDrawerItems() {
-		mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listArray);
+		mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listArray);
 		mDrawerList.setAdapter(mAdapter);
 
 		mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				openActivity(position);
+				mDrawerList.setItemChecked(position, true);
+				inflateFragment(position);
 			}
 		});
 	}
@@ -117,33 +137,59 @@ public abstract class NavDrawerActivity extends AppCompatActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	protected void openActivity(int position) {
+	protected void inflateFragment(int position) {
 
 		mDrawerLayout.closeDrawer(mDrawerList);
 		NavDrawerActivity.position = position; //Setting currently selected position in this field so that it will be available in our child activities.
 
-		switch (position) {
-			case 0:
-				startActivity(new Intent(this, CategoryActivity.class));
-				break;
-			case 1:
-				startActivity(new Intent(this, WalletActivity.class));
-				break;
-			case 2:
-				startActivity(new Intent(this, MenActivity.class));
-				break;
-			case 3:
-				startActivity(new Intent(this, WomenActivity.class));
-				break;
-			case 4:
-				startActivity(new Intent(this, KidsActivity.class));
-				break;
-			case 5:
-				startActivity(new Intent(this, ShoesActivity.class));
-				break;
+		Fragment fragment = getFragmentToRender(position);
 
+		getSupportFragmentManager().
+				beginTransaction().
+				replace(R.id.content_frame, fragment).
+				addToBackStack("category").
+				commit();
+	}
+
+	private Fragment getFragmentToRender(int position) {
+		switch (position) {
+			case 1:
+				return WalletActivity.newInstance();
+			case 2:
+				return MenActivity.newInstance();
+			case 3:
+				return WomenActivity.newInstance();
+			case 4:
+				return KidsActivity.newInstance();
+			case 5:
+				return ShoesActivity.newInstance();
 			default:
-				break;
+				return CategoryActivity.newInstance();
 		}
+	}
+
+	@Override
+	protected void onPushNotificationReceived(final JSONObject jsonObject) {
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				DDLListScreenlet ddLList = (DDLListScreenlet) findViewById(R.id.wallet_default);
+				if (ddLList != null) {
+					Crouton.clearCroutonsForActivity(NavDrawerActivity.this);
+					LiferayCrouton.info(NavDrawerActivity.this, "Reloading list...");
+					ddLList.loadPage(0);
+				}
+			}
+		});
+	}
+
+	@Override
+	protected void onErrorRegisteringPush(final String message, final Exception e) {
+
+	}
+
+	@Override
+	protected String getSenderId() {
+		return getString(R.string.sender_id);
 	}
 }

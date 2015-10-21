@@ -23,7 +23,9 @@ import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 import org.json.JSONObject;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
-
+/**
+ * @author Javier Gamarra
+ */
 public class NavDrawerActivity extends AbstractPushActivity {
 
 	protected static int position;

@@ -11,7 +11,7 @@ import com.liferay.ldxdemo.R;
 import com.liferay.ldxdemo.beacon.NotificationUtil;
 
 /**
- * @author dipenp
+ * @author Javier Gamarra
  */
 public class MenActivity extends Fragment {
 

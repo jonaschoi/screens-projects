@@ -12,7 +12,9 @@ import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.BeaconParser;
 import org.altbeacon.beacon.MonitorNotifier;
 import org.altbeacon.beacon.Region;
-
+/**
+ * @author Javier Gamarra
+ */
 public class BeaconReceiver extends AppCompatActivity implements BeaconConsumer {
 
 	protected static final String TAG = "MonitoringActivity";

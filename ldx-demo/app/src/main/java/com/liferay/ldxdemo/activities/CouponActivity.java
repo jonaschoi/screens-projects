@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.liferay.ldxdemo.R;
-
+/**
+ * @author Javier Gamarra
+ */
 public class CouponActivity extends Fragment {
 
 //		setTitle(R.string.title_activity_coupon1);

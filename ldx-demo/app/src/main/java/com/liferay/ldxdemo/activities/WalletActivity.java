@@ -26,7 +26,9 @@ import org.json.JSONObject;
 import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
-
+/**
+ * @author Javier Gamarra
+ */
 public class WalletActivity extends Fragment implements BaseListListener<Record> {
 
 	public static Fragment newInstance() {

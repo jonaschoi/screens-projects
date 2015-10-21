@@ -14,7 +14,9 @@ import com.liferay.ldxdemo.R;
 import com.liferay.mobile.screens.auth.login.LoginListener;
 import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 import com.liferay.mobile.screens.context.User;
-
+/**
+ * @author Javier Gamarra
+ */
 public class MainActivity extends AppCompatActivity implements LoginListener {
 
 	private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements LoginListener {
 		LoginScreenlet loginScreenlet = (LoginScreenlet) findViewById(R.id.login_screenlet);
 		loginScreenlet.setListener(this);
 
-		setDefaultValuesForUserAndPassword();
+//		setDefaultValuesForUserAndPassword();
 	}
 
 	@Override

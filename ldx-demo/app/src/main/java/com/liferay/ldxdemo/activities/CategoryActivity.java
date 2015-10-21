@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.liferay.ldxdemo.R;
 
 /**
- * @author dipenp
+ * @author Javier Gamarra
  */
 public class CategoryActivity extends Fragment {
 

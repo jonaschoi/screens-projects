@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 
 import com.liferay.ldxdemo.R;
 
-
 /**
- * @author dipenp
+ * @author Javier Gamarra
  */
 public class KidsActivity extends Fragment implements View.OnTouchListener {
 

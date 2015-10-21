@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.liferay.ldxdemo.R;
+import com.liferay.ldxdemo.beacon.NotificationUtil;
 
 /**
  * @author dipenp
@@ -26,7 +27,12 @@ public class MenActivity extends Fragment {
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.activity_men, container, false);
+		View inflate = inflater.inflate(R.layout.activity_men, container, false);
+
+		//example of sending a 'push' notification
+		NotificationUtil.sendNotification(getContext());
+
+		return inflate;
 	}
 
 //		setTitle(R.string.title_section3);

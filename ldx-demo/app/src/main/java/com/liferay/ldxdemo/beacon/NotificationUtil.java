@@ -12,33 +12,25 @@ import android.support.v4.app.NotificationCompat;
 
 import com.liferay.ldxdemo.R;
 import com.liferay.ldxdemo.activities.WalletActivity;
-import com.liferay.mobile.screens.push.AbstractPushService;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * @author Javier Gamarra
  */
-public class BeaconService extends AbstractPushService {
+public class NotificationUtil {
 
 	public static final int NOTIFICATION_ID = 2;
 
-	@Override
-	protected void processJSONNotification(final JSONObject json) throws Exception {
-		boolean creation = json.has("newNotification") && json.getBoolean("newNotification");
-		String titleHeader = (creation ? "New" : "Updated") + " notification: ";
-		String title = getString(R.string.app_slogan);
+	public static void sendNotification(Context context) {
+		String title = context.getString(R.string.app_slogan);
 		String description = "Near our store today? Hurry in and use your 25% off our Spring Shoe Sale! Click for details.";
-		String photo = getString(json, "photo");
 
-		createGlobalNotification(title, description);
+		createGlobalNotification(context.getApplicationContext(), title, description);
 	}
 
-	private void createGlobalNotification(String title, String description) {
+	private static void createGlobalNotification(Context context, String title, String description) {
 		Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-		NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
 				.setContentTitle(title)
 				.setContentText(description)
 				.setAutoCancel(true)
@@ -46,23 +38,19 @@ public class BeaconService extends AbstractPushService {
 				.setVibrate(new long[]{2000, 1000, 2000, 1000})
 				.setSmallIcon(R.drawable.liferay_glyph);
 
-		builder.setContentIntent(createPendingIntentForNotifications());
+		builder.setContentIntent(createPendingIntentForNotifications(context));
 
 		Notification notification = builder.build();
 		NotificationManager notificationManager =
-				(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+				(NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 		notificationManager.notify(NOTIFICATION_ID, notification);
 	}
 
-	private PendingIntent createPendingIntentForNotifications() {
-		Intent resultIntent = new Intent(this, WalletActivity.class);
+	private static PendingIntent createPendingIntentForNotifications(Context context) {
+		Intent resultIntent = new Intent(context, WalletActivity.class);
 
-		TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+		TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
 		stackBuilder.addNextIntent(resultIntent);
 		return stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-	}
-
-	private String getString(final JSONObject json, final String element) throws JSONException {
-		return json.has(element) ? json.getString(element) : "";
 	}
 }

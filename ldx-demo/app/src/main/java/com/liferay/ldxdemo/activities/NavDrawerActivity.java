@@ -17,7 +17,7 @@ import com.liferay.ldxdemo.R;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
-import com.liferay.mobile.screens.push.AbstractPushActivity;
+import com.liferay.mobile.screens.push.PushScreensActivity;
 import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
 import org.json.JSONObject;
@@ -26,7 +26,7 @@ import de.keyboardsurfer.android.widget.crouton.Crouton;
 /**
  * @author Javier Gamarra
  */
-public class NavDrawerActivity extends AbstractPushActivity {
+public class NavDrawerActivity extends PushScreensActivity {
 
 	protected static int position;
 	protected ListView mDrawerList;

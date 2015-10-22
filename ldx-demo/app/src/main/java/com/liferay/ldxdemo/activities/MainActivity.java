@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements LoginListener {
 		LoginScreenlet loginScreenlet = (LoginScreenlet) findViewById(R.id.login_screenlet);
 		loginScreenlet.setListener(this);
 
-//		setDefaultValuesForUserAndPassword();
+		setDefaultValuesForUserAndPassword();
 	}
 
 	@Override

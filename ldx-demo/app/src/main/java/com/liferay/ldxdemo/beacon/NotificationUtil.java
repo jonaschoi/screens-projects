@@ -22,7 +22,7 @@ public class NotificationUtil {
 
 	public static void sendNotification(Context context) {
 		String title = context.getString(R.string.app_slogan);
-		String description = "Near our store today? Hurry in and use your 25% off our Spring Shoe Sale! Click for details.";
+		String description = "Looking at shoes? Get a sweet discount! Click for details.";
 
 		createGlobalNotification(context.getApplicationContext(), title, description);
 	}

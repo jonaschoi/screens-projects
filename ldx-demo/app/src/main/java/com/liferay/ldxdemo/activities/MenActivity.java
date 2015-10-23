@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.liferay.ldxdemo.R;
-import com.liferay.ldxdemo.beacon.NotificationUtil;
 
 /**
  * @author Javier Gamarra
@@ -30,7 +29,7 @@ public class MenActivity extends Fragment {
 		View inflate = inflater.inflate(R.layout.activity_men, container, false);
 
 		//example of sending a 'push' notification
-		NotificationUtil.sendNotification(getContext());
+//		NotificationUtil.sendNotification(getContext());
 
 		return inflate;
 	}

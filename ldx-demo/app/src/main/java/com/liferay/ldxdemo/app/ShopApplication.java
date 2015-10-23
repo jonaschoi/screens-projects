@@ -4,6 +4,7 @@ import android.app.Application;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.liferay.ldxdemo.R;
 import com.liferay.ldxdemo.beacon.NotificationUtil;
 
 import org.altbeacon.beacon.Beacon;
@@ -25,7 +26,7 @@ import java.util.UUID;
  */
 public class ShopApplication extends Application implements BeaconConsumer {
 
-	public static final String BEACON_LAYOUT = "m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24";
+	public static final String BEACON_LAYOUT = "m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"; //see line 81
 	protected static final String TAG = "ShopApp";
 	private static final double MIN_DISTANCE = 2D;
 	private Date lastNotificationSent = new Date(0);
@@ -66,7 +67,7 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		});
 
 		try {
-			Identifier beaconId = Identifier.fromUuid(UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D"));
+			Identifier beaconId = Identifier.fromUuid(UUID.fromString(getString(R.string.beacon_uuid)));
 			Region sth = new Region("shop", beaconId, null, null);
 			beaconManager.startMonitoringBeaconsInRegion(sth);
 			beaconManager.startRangingBeaconsInRegion(sth);
@@ -78,7 +79,7 @@ public class ShopApplication extends Application implements BeaconConsumer {
 	private void bindBeacon() {
 		beaconManager = BeaconManager.getInstanceForApplication(this);
 		beaconManager.getBeaconParsers().add(new BeaconParser().
-				setBeaconLayout(BEACON_LAYOUT));
+				setBeaconLayout(getString(R.string.beacon_layout)));
 		beaconManager.bind(this);
 	}
 

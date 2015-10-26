@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import com.liferay.ldxdemo.R;
@@ -29,27 +30,68 @@ import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 import org.json.JSONObject;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
+
 /**
  * @author Javier Gamarra
  */
-public class NavDrawerActivity extends PushScreensActivity {
+public class NavDrawerActivity extends PushScreensActivity implements FragmentLoaded {
 
-	protected static int position;
-	protected ListView mDrawerList;
-	protected DrawerLayout mDrawerLayout;
-	protected FrameLayout frameLayout;
-	protected String[] listArray = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
-	private ArrayAdapter<String> mAdapter;
-	private ActionBarDrawerToggle mDrawerToggle;
+	private static final float MIN_DISTANCE = 200f;
+	private int position;
+	private ListView drawerList;
+	private DrawerLayout drawerLayout;
+	private ActionBarDrawerToggle drawerToggle;
+	private String[] menuItems = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
+
+	private GestureDetector.OnGestureListener listener = new GestureDetector.OnGestureListener() {
+		@Override
+		public boolean onDown(MotionEvent e) {
+			return false;
+		}
+
+		@Override
+		public void onShowPress(MotionEvent e) {
+
+		}
+
+		@Override
+		public boolean onSingleTapUp(MotionEvent e) {
+			return false;
+		}
+
+		@Override
+		public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+			return false;
+		}
+
+		@Override
+		public void onLongPress(MotionEvent e) {
+
+		}
+
+		@Override
+		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+			try {
+				if (Math.abs(e1.getY() - e2.getY()) < MIN_DISTANCE / 2
+						&& e1.getX() - e2.getX() > MIN_DISTANCE
+						&& Math.abs(velocityX) > MIN_DISTANCE) {
+					moveToNextFragment();
+					return false;
+				}
+			} catch (Exception e) {
+				// nothing
+			}
+			return true;
+		}
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.navigation_drawer_base_layout);
 
-		frameLayout = (FrameLayout) findViewById(R.id.content_frame);
-		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		mDrawerList = (ListView) findViewById(R.id.nav_list);
+		drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		drawerList = (ListView) findViewById(R.id.nav_list);
 
 		addDrawerItems();
 		setupDrawer();
@@ -71,20 +113,20 @@ public class NavDrawerActivity extends PushScreensActivity {
 	}
 
 	protected void addDrawerItems() {
-		mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listArray);
-		mDrawerList.setAdapter(mAdapter);
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menuItems);
+		drawerList.setAdapter(adapter);
 
-		mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				mDrawerList.setItemChecked(position, true);
+				drawerList.setItemChecked(position, true);
 				inflateFragment(position);
 			}
 		});
 	}
 
 	private void setupDrawer() {
-		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.drawer_open, R.string.drawer_close) {
+		drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) {
 
 			/** Called when a drawer has settled in a completely open state. */
 			public void onDrawerOpened(View drawerView) {
@@ -96,26 +138,26 @@ public class NavDrawerActivity extends PushScreensActivity {
 			/** Called when a drawer has settled in a completely closed state. */
 			public void onDrawerClosed(View view) {
 				super.onDrawerClosed(view);
-				getSupportActionBar().setTitle(listArray[position]);
+				getSupportActionBar().setTitle(menuItems[position]);
 				invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
 			}
 		};
 
-		mDrawerToggle.setDrawerIndicatorEnabled(true);
-		mDrawerLayout.setDrawerListener(mDrawerToggle);
+		drawerToggle.setDrawerIndicatorEnabled(true);
+		drawerLayout.setDrawerListener(drawerToggle);
 	}
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 		// Sync the toggle state after onRestoreInstanceState has occurred.
-		mDrawerToggle.syncState();
+		drawerToggle.syncState();
 	}
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
-		mDrawerToggle.onConfigurationChanged(newConfig);
+		drawerToggle.onConfigurationChanged(newConfig);
 	}
 
 	@Override
@@ -138,7 +180,7 @@ public class NavDrawerActivity extends PushScreensActivity {
 		}
 
 		// Activate the navigation drawer toggle
-		if (mDrawerToggle.onOptionsItemSelected(item)) {
+		if (drawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
 
@@ -147,8 +189,8 @@ public class NavDrawerActivity extends PushScreensActivity {
 
 	protected void inflateFragment(int position) {
 
-		mDrawerLayout.closeDrawer(mDrawerList);
-		NavDrawerActivity.position = position; //Setting currently selected position in this field so that it will be available in our child activities.
+		drawerLayout.closeDrawer(drawerList);
+		this.position = position;
 
 		Fragment fragment = getFragmentToRender(position);
 
@@ -199,5 +241,30 @@ public class NavDrawerActivity extends PushScreensActivity {
 	@Override
 	protected String getSenderId() {
 		return getString(R.string.sender_id);
+	}
+	@Override
+	public void onFragmentLoaded(View view, final boolean interceptEvents) {
+		if (view != null) {
+			final GestureDetector gestureDetector = new GestureDetector(this, listener);
+			view.setOnTouchListener(new View.OnTouchListener() {
+				@Override
+				public boolean onTouch(final View view, final MotionEvent event) {
+					gestureDetector.onTouchEvent(event);
+					return interceptEvents;
+				}
+			});
+		}
+	}
+
+	private void moveToNextFragment() {
+		position = (position + 1) % menuItems.length;
+
+		getSupportActionBar().setTitle(menuItems[position]);
+
+		getSupportFragmentManager().
+				beginTransaction().
+				replace(R.id.content_frame, getFragmentToRender(position)).
+				addToBackStack(null).
+				commit();
 	}
 }

@@ -99,10 +99,15 @@ public class NavDrawerActivity extends PushScreensActivity implements FragmentLo
 		// enable ActionBar app icon to behave as action to toggle nav drawer
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
 
 		getSupportFragmentManager().
 				beginTransaction().
-				replace(R.id.content_frame, CategoryActivity.newInstance()).
+				replace(R.id.content_frame, getFragmentToRender(position)).
 				addToBackStack("category").
 				commit();
 	}
@@ -242,6 +247,21 @@ public class NavDrawerActivity extends PushScreensActivity implements FragmentLo
 	protected String getSenderId() {
 		return getString(R.string.sender_id);
 	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+
+		outState.putInt("position", position);
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+
+		position = savedInstanceState.getInt("position");
+	}
+
 	@Override
 	public void onFragmentLoaded(View view, final boolean interceptEvents) {
 		if (view != null) {

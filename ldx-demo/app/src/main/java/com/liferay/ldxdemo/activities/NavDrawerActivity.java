@@ -14,6 +14,12 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import com.liferay.ldxdemo.R;
+import com.liferay.ldxdemo.fragments.CategoryFragment;
+import com.liferay.ldxdemo.fragments.KidsFragment;
+import com.liferay.ldxdemo.fragments.MenFragment;
+import com.liferay.ldxdemo.fragments.ShoesFragment;
+import com.liferay.ldxdemo.fragments.WalletFragment;
+import com.liferay.ldxdemo.fragments.WomenFragment;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
@@ -156,17 +162,17 @@ public class NavDrawerActivity extends PushScreensActivity {
 	private Fragment getFragmentToRender(int position) {
 		switch (position) {
 			case 1:
-				return WalletActivity.newInstance();
+				return WalletFragment.newInstance();
 			case 2:
-				return MenActivity.newInstance();
+				return MenFragment.newInstance();
 			case 3:
-				return WomenActivity.newInstance();
+				return WomenFragment.newInstance();
 			case 4:
-				return KidsActivity.newInstance();
+				return KidsFragment.newInstance();
 			case 5:
-				return ShoesActivity.newInstance();
+				return ShoesFragment.newInstance();
 			default:
-				return CategoryActivity.newInstance();
+				return CategoryFragment.newInstance();
 		}
 	}
 

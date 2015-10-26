@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
 import com.liferay.ldxdemo.R;
-import com.liferay.ldxdemo.activities.WalletActivity;
+import com.liferay.ldxdemo.fragments.WalletFragment;
 
 /**
  * @author Javier Gamarra
@@ -47,7 +47,7 @@ public class NotificationUtil {
 	}
 
 	private static PendingIntent createPendingIntentForNotifications(Context context) {
-		Intent resultIntent = new Intent(context, WalletActivity.class);
+		Intent resultIntent = new Intent(context, WalletFragment.class);
 
 		TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
 		stackBuilder.addNextIntent(resultIntent);

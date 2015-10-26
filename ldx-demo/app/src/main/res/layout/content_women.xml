@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:liferay="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                tools:context="com.liferay.mobile.pushnotifications.activities.CouponActivity">
+
+    <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        liferay:articleId="@integer/article_id_women"
+        liferay:offlinePolicy="CACHE_FIRST"/>
+
+</RelativeLayout>

@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
 import com.liferay.ldxdemo.R;
+import com.liferay.ldxdemo.activities.NavDrawerActivity;
 import com.liferay.ldxdemo.fragments.WalletFragment;
 
 /**
@@ -47,7 +48,8 @@ public class NotificationUtil {
 	}
 
 	private static PendingIntent createPendingIntentForNotifications(Context context) {
-		Intent resultIntent = new Intent(context, WalletFragment.class);
+		Intent resultIntent = new Intent(context, NavDrawerActivity.class);
+		resultIntent.putExtra("position", 1);
 
 		TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
 		stackBuilder.addNextIntent(resultIntent);

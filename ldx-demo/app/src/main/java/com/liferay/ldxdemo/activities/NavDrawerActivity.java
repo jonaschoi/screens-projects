@@ -96,6 +96,8 @@ public class NavDrawerActivity extends PushScreensActivity implements FragmentLo
 		addDrawerItems();
 		setupDrawer();
 
+		position = getIntent().getIntExtra("position", 0);
+
 		// enable ActionBar app icon to behave as action to toggle nav drawer
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);

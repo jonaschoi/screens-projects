@@ -23,7 +23,7 @@ public class BeaconReceiver extends AppCompatActivity implements BeaconConsumer 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_wallet);
+		setContentView(R.layout.content_wallet);
 		beaconManager = BeaconManager.getInstanceForApplication(this);
 		// To detect proprietary beacons, you must add a line like below corresponding to your beacon
 		// type.  Do a web search for "setBeaconLayout" to get the proper expression.

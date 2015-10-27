@@ -1,4 +1,4 @@
-package com.liferay.ldxdemo.activities;
+package com.liferay.ldxdemo.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.liferay.ldxdemo.R;
+import com.liferay.ldxdemo.activities.FragmentLoaded;
+import com.liferay.ldxdemo.activities.MainActivity;
 import com.liferay.mobile.android.callback.typed.JSONObjectCallback;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.android.v62.ddlrecordset.DDLRecordSetService;
@@ -26,22 +28,20 @@ import org.json.JSONObject;
 import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
+
 /**
  * @author Javier Gamarra
  */
-public class WalletActivity extends Fragment implements BaseListListener<Record> {
+public class WalletFragment extends AbstractWebContentFragment implements BaseListListener<Record> {
 
 	public static Fragment newInstance() {
-		return new WalletActivity();
+		return new WalletFragment();
 	}
-
-//		setTitle(R.string.title_section2);
-
 
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.activity_wallet, container, false);
+		View view = inflater.inflate(R.layout.content_wallet, container, false);
 
 		DDLListScreenlet ddlList = (DDLListScreenlet) view.findViewById(R.id.wallet_default);
 		ddlList.setListener(this);
@@ -96,7 +96,7 @@ public class WalletActivity extends Fragment implements BaseListListener<Record>
 				try {
 					getFragmentManager().
 							beginTransaction().
-							replace(R.id.content_frame, CouponActivity.newInstance(recordId, recordSetId, result.getInt("DDMStructureId"))).
+							replace(R.id.content_frame, CouponFragment.newInstance(recordId, recordSetId, result.getInt("DDMStructureId"))).
 							addToBackStack(null).
 							commit();
 
@@ -126,5 +126,13 @@ public class WalletActivity extends Fragment implements BaseListListener<Record>
 	@Override
 	public void storingToCache(Object object) {
 
+	}
+
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+
+		FragmentLoaded activity = (FragmentLoaded) getActivity();
+		activity.onFragmentLoaded(getView().findViewById(R.id.wallet_layout), true);
 	}
 }

@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
 import com.liferay.ldxdemo.R;
-import com.liferay.ldxdemo.activities.WalletActivity;
+import com.liferay.ldxdemo.fragments.WalletFragment;
 import com.liferay.mobile.screens.push.AbstractPushService;
 
 import org.json.JSONException;
@@ -55,7 +55,7 @@ public class PushService extends AbstractPushService {
 	}
 
 	private PendingIntent createPendingIntentForNotifications() {
-		Intent resultIntent = new Intent(this, WalletActivity.class);
+		Intent resultIntent = new Intent(this, WalletFragment.class);
 
 		TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
 		stackBuilder.addNextIntent(resultIntent);

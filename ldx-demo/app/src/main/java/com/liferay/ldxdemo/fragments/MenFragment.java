@@ -1,8 +1,7 @@
-package com.liferay.ldxdemo.activities;
+package com.liferay.ldxdemo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +11,13 @@ import com.liferay.ldxdemo.R;
 /**
  * @author Javier Gamarra
  */
-public class WomenActivity extends Fragment {
+public class MenFragment extends AbstractWebContentFragment {
 
-	public static WomenActivity newInstance() {
+	public static MenFragment newInstance() {
 
 		Bundle args = new Bundle();
 
-		WomenActivity fragment = new WomenActivity();
+		MenFragment fragment = new MenFragment();
 		fragment.setArguments(args);
 		return fragment;
 	}
@@ -26,9 +25,7 @@ public class WomenActivity extends Fragment {
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.activity_women, container, false);
+		return inflater.inflate(R.layout.content_men, container, false);
 	}
 
-//		setTitle(R.string.title_section4);
-////		setTitle(listArray[position]);
 }

@@ -67,8 +67,10 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		});
 
 		try {
-			Identifier beaconId = Identifier.fromUuid(UUID.fromString(getString(R.string.beacon_uuid)));
-			Region sth = new Region("shop", beaconId, null, null);
+			Identifier beaconId1 = Identifier.fromUuid(UUID.fromString(getString(R.string.beacon_uuid1)));
+			Identifier beaconId2 = Identifier.fromInt(Integer.parseInt(getString(R.string.beacon_uuid2)));
+			Identifier beaconId3 = Identifier.fromInt(Integer.parseInt(getString(R.string.beacon_uuid3)));
+			Region sth = new Region("shop", beaconId1, beaconId2, beaconId3);
 			beaconManager.startMonitoringBeaconsInRegion(sth);
 			beaconManager.startRangingBeaconsInRegion(sth);
 		} catch (RemoteException e) {

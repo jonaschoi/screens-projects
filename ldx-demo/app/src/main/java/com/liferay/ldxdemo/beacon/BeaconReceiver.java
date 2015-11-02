@@ -43,17 +43,17 @@ public class BeaconReceiver extends AppCompatActivity implements BeaconConsumer 
 		beaconManager.setMonitorNotifier(new MonitorNotifier() {
 			@Override
 			public void didEnterRegion(Region region) {
-				Log.i(TAG, "I just saw an beacon for the first time!");
+				Log.i(TAG, "I just saw an beacon for the first time! aoeu");
 			}
 
 			@Override
 			public void didExitRegion(Region region) {
-				Log.i(TAG, "I no longer see an beacon");
+				Log.i(TAG, "I no longer see an beacon aoeu");
 			}
 
 			@Override
 			public void didDetermineStateForRegion(int state, Region region) {
-				Log.i(TAG, "I have just switched from seeing/not seeing beacons: " + state);
+				Log.i(TAG, "I have just switched from seeing/not seeing beacons: aoeu" + state);
 			}
 		});
 

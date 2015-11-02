@@ -25,7 +25,9 @@
     </string-array>
 
     <string name="beacon_layout">m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24</string>
-    <string name="beacon_uuid">2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</string>
+    <string name="beacon_uuid1">2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</string>
+    <string name="beacon_uuid2">1</string>
+    <string name="beacon_uuid3">25</string>
 
     <integer name="article_id_category">56200</integer>
     <integer name="article_id_men">58586</integer>

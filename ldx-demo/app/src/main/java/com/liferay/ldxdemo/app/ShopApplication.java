@@ -31,6 +31,8 @@ public class ShopApplication extends Application implements BeaconConsumer {
 	private static final double MIN_DISTANCE = 2D;
 	private Date lastNotificationSent = new Date(0);
 	private BeaconManager beaconManager;
+	String[] beacon_id = getResources().getStringArray(R.array.beacon_id1);
+	Identifier[] identifiers;
 
 	@Override
 	public void onCreate() {
@@ -67,15 +69,23 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		});
 
 		try {
-			Identifier beaconId1 = Identifier.fromUuid(UUID.fromString(getString(R.string.beacon_uuid1)));
-			Identifier beaconId2 = Identifier.fromInt(Integer.parseInt(getString(R.string.beacon_uuid2)));
-			Identifier beaconId3 = Identifier.fromInt(Integer.parseInt(getString(R.string.beacon_uuid3)));
-			Region sth = new Region("shop", beaconId1, beaconId2, beaconId3);
+//			Identifier beaconId1 = Identifier.fromUuid(UUID.fromString(getString(R.string.beacon_uuid1)));
+//			Identifier beaconId2 = Identifier.fromInt(Integer.parseInt(getString(R.string.beacon_uuid2)));
+//			Identifier beaconId3 = Identifier.fromInt(Integer.parseInt(getString(R.string.beacon_uuid3)));
+			Region sth = new Region("shop", identifiers[0], identifiers[1], identifiers[2]);
 			beaconManager.startMonitoringBeaconsInRegion(sth);
 			beaconManager.startRangingBeaconsInRegion(sth);
 		} catch (RemoteException e) {
 			Log.e(TAG, "Error reading beacons", e);
 		}
+	}
+
+	protected void createIdentifier() {
+		Identifier[] identifiers = new Identifier[3];
+
+		identifiers[0] = Identifier.fromUuid(UUID.fromString(beacon_id[0]));
+		identifiers[1] = Identifier.fromInt(Integer.parseInt(beacon_id[1]));
+		identifiers[2] = Identifier.fromInt(Integer.parseInt(beacon_id[2]));
 	}
 
 	private void bindBeacon() {

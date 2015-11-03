@@ -29,6 +29,12 @@
     <string name="beacon_uuid2">1</string>
     <string name="beacon_uuid3">25</string>
 
+    <string-array name="beacon_id1">
+        <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
+        <item>1</item>
+        <item>25</item>
+    </string-array>
+
     <integer name="article_id_category">56200</integer>
     <integer name="article_id_men">58586</integer>
     <integer name="article_id_women">58613</integer>

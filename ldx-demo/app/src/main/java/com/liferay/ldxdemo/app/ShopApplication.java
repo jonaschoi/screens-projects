@@ -26,13 +26,10 @@ import java.util.UUID;
  */
 public class ShopApplication extends Application implements BeaconConsumer {
 
-	public static final String BEACON_LAYOUT = "m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"; //see line 81
 	protected static final String TAG = "ShopApp";
 	private static final double MIN_DISTANCE = 2D;
 	private Date lastNotificationSent = new Date(0);
 	private BeaconManager beaconManager;
-	String[] beacon_id = getResources().getStringArray(R.array.beacon_id1);
-	Identifier[] identifiers;
 
 	@Override
 	public void onCreate() {
@@ -69,9 +66,9 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		});
 
 		try {
-//			Identifier beaconId1 = Identifier.fromUuid(UUID.fromString(getString(R.string.beacon_uuid1)));
-//			Identifier beaconId2 = Identifier.fromInt(Integer.parseInt(getString(R.string.beacon_uuid2)));
-//			Identifier beaconId3 = Identifier.fromInt(Integer.parseInt(getString(R.string.beacon_uuid3)));
+			String[] beacon_id = getApplicationContext().getResources().getStringArray(R.array.beacon1);
+
+			Identifier[] identifiers = createIdentifier(beacon_id);
 			Region sth = new Region("shop", identifiers[0], identifiers[1], identifiers[2]);
 			beaconManager.startMonitoringBeaconsInRegion(sth);
 			beaconManager.startRangingBeaconsInRegion(sth);
@@ -80,12 +77,14 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		}
 	}
 
-	protected void createIdentifier() {
+	protected Identifier[] createIdentifier(String[] beacon_array) {
 		Identifier[] identifiers = new Identifier[3];
 
-		identifiers[0] = Identifier.fromUuid(UUID.fromString(beacon_id[0]));
-		identifiers[1] = Identifier.fromInt(Integer.parseInt(beacon_id[1]));
-		identifiers[2] = Identifier.fromInt(Integer.parseInt(beacon_id[2]));
+		identifiers[0] = Identifier.fromUuid(UUID.fromString(beacon_array[0]));
+		identifiers[1] = Identifier.fromInt(Integer.parseInt(beacon_array[1]));
+		identifiers[2] = Identifier.fromInt(Integer.parseInt(beacon_array[2]));
+
+			return identifiers;
 	}
 
 	private void bindBeacon() {
@@ -113,7 +112,7 @@ public class ShopApplication extends Application implements BeaconConsumer {
 
 	private Date getTimeFiveMinutesAgo() {
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.MINUTE, -5);
+		calendar.add(Calendar.MINUTE, -1);
 		return calendar.getTime();
 	}
 }

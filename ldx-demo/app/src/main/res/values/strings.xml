@@ -25,11 +25,16 @@
     </string-array>
 
     <string name="beacon_layout">m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24</string>
-    <string name="beacon_uuid1">2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</string>
-    <string name="beacon_uuid2">1</string>
-    <string name="beacon_uuid3">25</string>
 
-    <string-array name="beacon_id1">
+    <string-array name="beacon1">
+        <!--dark blue ibeacon-->
+        <item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>
+        <item>21129</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="beacon_test">
+        <!--Beacon from Phone App-->
         <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
         <item>1</item>
         <item>25</item>

@@ -42,6 +42,7 @@ public class NavDrawerActivity extends PushScreensActivity implements FragmentLo
 	private DrawerLayout drawerLayout;
 	private ActionBarDrawerToggle drawerToggle;
 	private String[] menuItems = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
+//	private String[] menuItems = getApplicationContext().getResources().getStringArray(R.array.menu_items);
 
 	private GestureDetector.OnGestureListener listener = new GestureDetector.OnGestureListener() {
 		@Override

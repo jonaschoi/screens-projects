@@ -84,7 +84,7 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		identifiers[1] = Identifier.fromInt(Integer.parseInt(beacon_array[1]));
 		identifiers[2] = Identifier.fromInt(Integer.parseInt(beacon_array[2]));
 
-			return identifiers;
+		return identifiers;
 	}
 
 	private void bindBeacon() {

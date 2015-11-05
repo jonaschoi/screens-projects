@@ -11,9 +11,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse" />
+    <style name="AppTheme.AppBarOverlay" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse"/>
 
-    <style name="AppTheme.PopupOverlay" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse" />
+    <style name="AppTheme.PopupOverlay" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse"/>
 
     <style name="MyToolbarStyle" parent="Widget.AppCompat.ActionBar">
         <item name="theme">@style/MyToolbarTextStyle</item>

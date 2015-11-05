@@ -12,7 +12,6 @@ import android.support.v4.app.NotificationCompat;
 
 import com.liferay.ldxdemo.R;
 import com.liferay.ldxdemo.activities.NavDrawerActivity;
-import com.liferay.ldxdemo.fragments.WalletFragment;
 
 /**
  * @author Javier Gamarra

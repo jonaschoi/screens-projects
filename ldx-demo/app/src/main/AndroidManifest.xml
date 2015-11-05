@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.liferay.ldxdemo">
+<manifest package="com.liferay.ldxdemo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
-        android:required="true" />
+        android:required="true"/>
 
     <application
         android:name=".app.ShopApplication"
@@ -20,31 +20,27 @@
             android:name=".activities.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.NavDrawerActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"/>
 
         <receiver
             android:name=".notification.PushReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
 
-                <category android:name="com.liferay.mobile.push" />
+                <category android:name="com.liferay.mobile.push"/>
             </intent-filter>
         </receiver>
 
-        <service android:name=".notification.PushService" />
+        <service android:name=".notification.PushService"/>
 
-        <activity
-            android:name=".beacon.BeaconReceiver"
-            android:label="@string/title_activity_beacon_receiver"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

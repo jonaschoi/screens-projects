@@ -22,4 +22,15 @@
             android:title="Shoes"/>
     </group>
 
+    <item android:title="Profile Options">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/profile"
+                    android:title="Profile"/>
+            </group>
+        </menu>
+    </item>
+
+
 </menu>

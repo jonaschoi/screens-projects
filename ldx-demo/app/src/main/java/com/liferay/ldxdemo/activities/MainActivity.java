@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements LoginListener {
 
 	@Override
 	public void onLoginSuccess(User user) {
-		startActivity(new Intent(this, NavDrawerActivity.class));
+		startActivity(new Intent(this, MenuActivity.class));
 	}
 
 	@Override

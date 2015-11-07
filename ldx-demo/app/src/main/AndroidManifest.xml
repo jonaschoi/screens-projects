@@ -28,6 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activities.ProfileActivity"/>
+
         <receiver
             android:name=".notification.PushReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">

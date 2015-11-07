@@ -10,6 +10,7 @@
               android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <com.liferay.mobile.screens.userportrait.UserPortraitScreenlet
+        android:id="@+id/user_portrait_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layoutId="@layout/userportrait_default"/>

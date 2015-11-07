@@ -1,5 +1,6 @@
 package com.liferay.ldxdemo.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -18,7 +19,6 @@ import com.liferay.ldxdemo.R;
 import com.liferay.ldxdemo.fragments.CategoryFragment;
 import com.liferay.ldxdemo.fragments.KidsFragment;
 import com.liferay.ldxdemo.fragments.MenFragment;
-import com.liferay.ldxdemo.fragments.ProfileFragment;
 import com.liferay.ldxdemo.fragments.ShoesFragment;
 import com.liferay.ldxdemo.fragments.WalletFragment;
 import com.liferay.ldxdemo.fragments.WomenFragment;
@@ -160,20 +160,25 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 		// Handle navigation view item clicks here.
 		int id = item.getItemId();
 
-		if (id == R.id.category) {
-			inflateFragmentAtPosition(0);
-		} else if (id == R.id.wallet) {
-			inflateFragmentAtPosition(1);
-		} else if (id == R.id.men) {
-			inflateFragmentAtPosition(2);
-		} else if (id == R.id.women) {
-			inflateFragmentAtPosition(3);
-		} else if (id == R.id.kids) {
-			inflateFragmentAtPosition(4);
-		} else if (id == R.id.shoes) {
-			inflateFragmentAtPosition(5);
+		if (id == R.id.profile) {
+			startActivity(new Intent(this, ProfileActivity.class));
 		} else {
-			inflateProfile();
+
+			if (id == R.id.category) {
+				position = 0;
+			} else if (id == R.id.wallet) {
+				position = 1;
+			} else if (id == R.id.men) {
+				position = 2;
+			} else if (id == R.id.women) {
+				position = 3;
+			} else if (id == R.id.kids) {
+				position = 4;
+			} else if (id == R.id.shoes) {
+				position = 5;
+			}
+
+			inflateFragmentAtPosition(position);
 		}
 
 		return true;
@@ -181,7 +186,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 	@Override
 	public void onClick(View v) {
-		inflateProfile();
+		startActivity(new Intent(this, ProfileActivity.class));
 	}
 
 	@Override
@@ -239,7 +244,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 	private void moveToNextFragment() {
 		position = (position + 1) % menuItems.length;
 
-		inflateFragmentAtPosition(menuItems[position], getFragmentToRender(position));
+		inflateFragmentAtPosition(position);
 	}
 
 	private Fragment getFragmentToRender(int position) {
@@ -259,23 +264,15 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 		}
 	}
 
-	private void inflateFragmentAtPosition(int i) {
-		inflateFragmentAtPosition(menuItems[i], getFragmentToRender(i));
-	}
+	private void inflateFragmentAtPosition(int position) {
 
-	private void inflateProfile() {
-		inflateFragmentAtPosition("Profile", ProfileFragment.newInstance());
-	}
+		navigationView.getMenu().getItem(position).setChecked(true);
 
-	private void inflateFragmentAtPosition(String title, Fragment fragment) {
-
-		navigationView.getMenu().getItem(menuItems.length).setChecked(true);
-
-		getSupportActionBar().setTitle(title);
+		getSupportActionBar().setTitle(menuItems[position]);
 
 		getSupportFragmentManager().
 				beginTransaction().
-				replace(R.id.content_frame, fragment).
+				replace(R.id.content_frame, getFragmentToRender(position)).
 				addToBackStack(null).
 				commit();
 

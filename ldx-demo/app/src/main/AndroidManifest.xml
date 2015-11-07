@@ -26,10 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.NavDrawerActivity"
-            android:theme="@style/AppTheme"/>
-
         <receiver
             android:name=".notification.PushReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -42,6 +38,13 @@
 
         <service android:name=".notification.PushService"/>
 
+        <activity
+            android:name=".activities.MenuActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
     </application>
 
 </manifest>

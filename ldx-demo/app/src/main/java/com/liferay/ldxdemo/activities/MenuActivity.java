@@ -1,9 +1,7 @@
 package com.liferay.ldxdemo.activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,16 +12,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import com.liferay.ldxdemo.R;
 import com.liferay.ldxdemo.fragments.CategoryFragment;
 import com.liferay.ldxdemo.fragments.KidsFragment;
 import com.liferay.ldxdemo.fragments.MenFragment;
+import com.liferay.ldxdemo.fragments.ProfileFragment;
 import com.liferay.ldxdemo.fragments.ShoesFragment;
 import com.liferay.ldxdemo.fragments.WalletFragment;
 import com.liferay.ldxdemo.fragments.WomenFragment;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.screens.context.SessionContext;
+import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
 import com.liferay.mobile.screens.push.PushScreensActivity;
 import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
@@ -32,12 +33,13 @@ import org.json.JSONObject;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 
-public class MenuActivity extends PushScreensActivity implements FragmentLoaded, NavigationView.OnNavigationItemSelectedListener {
+public class MenuActivity extends PushScreensActivity implements FragmentLoaded, NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
 	private static final float MIN_DISTANCE = 200f;
 	private int position;
 	private String[] menuItems = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
-
+	private DrawerLayout drawer;
+	private NavigationView navigationView;
 	private GestureDetector.OnGestureListener listener = new GestureDetector.OnGestureListener() {
 		@Override
 		public boolean onDown(MotionEvent e) {
@@ -87,16 +89,22 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
 				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 		drawer.setDrawerListener(toggle);
 		toggle.syncState();
 
-		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		navigationView = (NavigationView) findViewById(R.id.nav_view);
 		navigationView.setNavigationItemSelectedListener(this);
 
 		position = getIntent().getIntExtra("position", 0);
+		navigationView.getMenu().getItem(position).setChecked(true);
+
+		User user = SessionContext.getLoggedUser();
+
+		((TextView) findViewById(R.id.logged_user)).setText(user.getFirstName() + " " + user.getLastName());
+		findViewById(R.id.liferay_portrait).setOnClickListener(this);
 	}
 
 	@Override
@@ -111,67 +119,6 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 	}
 
 	@Override
-	protected Session getDefaultSession() {
-		return SessionContext.createSessionFromCurrentSession();
-	}
-
-	private Fragment getFragmentToRender(int position) {
-		switch (position) {
-			case 1:
-				return WalletFragment.newInstance();
-			case 2:
-				return MenFragment.newInstance();
-			case 3:
-				return WomenFragment.newInstance();
-			case 4:
-				return KidsFragment.newInstance();
-			case 5:
-				return ShoesFragment.newInstance();
-			default:
-				return CategoryFragment.newInstance();
-		}
-	}
-
-	@Override
-	protected void onPushNotificationReceived(final JSONObject jsonObject) {
-		runOnUiThread(new Runnable() {
-			@Override
-			public void run() {
-				DDLListScreenlet ddLList = (DDLListScreenlet) findViewById(R.id.wallet_default);
-				if (ddLList != null) {
-					Crouton.clearCroutonsForActivity(MenuActivity.this);
-					LiferayCrouton.info(MenuActivity.this, "Reloading list...");
-					ddLList.loadPage(0);
-				}
-			}
-		});
-	}
-
-	@Override
-	protected void onErrorRegisteringPush(final String message, final Exception e) {
-
-	}
-
-	@Override
-	protected String getSenderId() {
-		return getString(R.string.sender_id);
-	}
-
-	@Override
-	protected void onSaveInstanceState(Bundle outState) {
-		super.onSaveInstanceState(outState);
-
-		outState.putInt("position", position);
-	}
-
-	@Override
-	protected void onRestoreInstanceState(Bundle savedInstanceState) {
-		super.onRestoreInstanceState(savedInstanceState);
-
-		position = savedInstanceState.getInt("position");
-	}
-
-	@Override
 	public void onFragmentLoaded(View view, final boolean interceptEvents) {
 		if (view != null) {
 			final GestureDetector gestureDetector = new GestureDetector(this, listener);
@@ -182,33 +129,6 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 					return interceptEvents;
 				}
 			});
-		}
-	}
-
-	private void moveToNextFragment() {
-		position = (position + 1) % menuItems.length;
-
-		inflateFragmentAtPosition(position);
-	}
-
-	private void inflateFragmentAtPosition(int position) {
-		getSupportActionBar().setTitle(menuItems[position]);
-
-		getSupportFragmentManager().
-				beginTransaction().
-				replace(R.id.content_frame, getFragmentToRender(position)).
-				addToBackStack(null).
-				commit();
-	}
-
-
-	@Override
-	public void onBackPressed() {
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-		if (drawer.isDrawerOpen(GravityCompat.START)) {
-			drawer.closeDrawer(GravityCompat.START);
-		} else {
-			super.onBackPressed();
 		}
 	}
 
@@ -252,10 +172,113 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 			inflateFragmentAtPosition(4);
 		} else if (id == R.id.shoes) {
 			inflateFragmentAtPosition(5);
+		} else {
+			inflateProfile();
 		}
 
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-		drawer.closeDrawer(GravityCompat.START);
 		return true;
+	}
+
+	@Override
+	public void onClick(View v) {
+		inflateProfile();
+	}
+
+	@Override
+	public void onBackPressed() {
+		if (drawer != null && drawer.isDrawerOpen(GravityCompat.START)) {
+			drawer.closeDrawer(GravityCompat.START);
+		} else {
+			super.onBackPressed();
+		}
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+
+		outState.putInt("position", position);
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+
+		position = savedInstanceState.getInt("position");
+	}
+
+	@Override
+	protected Session getDefaultSession() {
+		return SessionContext.createSessionFromCurrentSession();
+	}
+
+	@Override
+	protected void onPushNotificationReceived(final JSONObject jsonObject) {
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				DDLListScreenlet ddLList = (DDLListScreenlet) findViewById(R.id.wallet_default);
+				if (ddLList != null) {
+					Crouton.clearCroutonsForActivity(MenuActivity.this);
+					LiferayCrouton.info(MenuActivity.this, "Reloading list...");
+					ddLList.loadPage(0);
+				}
+			}
+		});
+	}
+
+	@Override
+	protected void onErrorRegisteringPush(final String message, final Exception e) {
+	}
+
+	@Override
+	protected String getSenderId() {
+		return getString(R.string.sender_id);
+	}
+
+	private void moveToNextFragment() {
+		position = (position + 1) % menuItems.length;
+
+		inflateFragmentAtPosition(menuItems[position], getFragmentToRender(position));
+	}
+
+	private Fragment getFragmentToRender(int position) {
+		switch (position) {
+			case 1:
+				return WalletFragment.newInstance();
+			case 2:
+				return MenFragment.newInstance();
+			case 3:
+				return WomenFragment.newInstance();
+			case 4:
+				return KidsFragment.newInstance();
+			case 5:
+				return ShoesFragment.newInstance();
+			default:
+				return CategoryFragment.newInstance();
+		}
+	}
+
+	private void inflateFragmentAtPosition(int i) {
+		inflateFragmentAtPosition(menuItems[i], getFragmentToRender(i));
+	}
+
+	private void inflateProfile() {
+		inflateFragmentAtPosition("Profile", ProfileFragment.newInstance());
+	}
+
+	private void inflateFragmentAtPosition(String title, Fragment fragment) {
+
+		navigationView.getMenu().getItem(menuItems.length).setChecked(true);
+
+		getSupportActionBar().setTitle(title);
+
+		getSupportFragmentManager().
+				beginTransaction().
+				replace(R.id.content_frame, fragment).
+				addToBackStack(null).
+				commit();
+
+		drawer.closeDrawer(GravityCompat.START);
 	}
 }

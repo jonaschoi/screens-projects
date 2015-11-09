@@ -52,6 +52,5 @@
     <integer name="article_id_coupon1">21420</integer>
     <integer name="ddl_recordset_id">21958</integer>
     <integer name="ddl_structure_id">21957</integer>
-    <string name="title_activity_beacon_receiver">BeaconReceiver</string>
 
 </resources>

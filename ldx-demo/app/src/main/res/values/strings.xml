@@ -53,5 +53,7 @@
     <integer name="ddl_recordset_id">21958</integer>
     <integer name="ddl_structure_id">21957</integer>
     <string name="title_activity_beacon_receiver">BeaconReceiver</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 </resources>

@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
 import com.liferay.ldxdemo.R;
-import com.liferay.ldxdemo.activities.NavDrawerActivity;
+import com.liferay.ldxdemo.activities.MenuActivity;
 
 /**
  * @author Javier Gamarra
@@ -47,7 +47,7 @@ public class NotificationUtil {
 	}
 
 	private static PendingIntent createPendingIntentForNotifications(Context context) {
-		Intent resultIntent = new Intent(context, NavDrawerActivity.class);
+		Intent resultIntent = new Intent(context, MenuActivity.class);
 		resultIntent.putExtra("position", 1);
 
 		TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);

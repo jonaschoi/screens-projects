@@ -5,28 +5,29 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.liferay.ldxdemo.R;
-import com.liferay.mobile.screens.auth.login.LoginListener;
-import com.liferay.mobile.screens.auth.login.LoginScreenlet;
+import com.liferay.mobile.screens.auth.signup.SignUpListener;
+import com.liferay.mobile.screens.auth.signup.SignUpScreenlet;
 import com.liferay.mobile.screens.context.User;
 
-public class SignUpActivity extends AppCompatActivity implements LoginListener {
+public class SignUpActivity extends AppCompatActivity implements SignUpListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sign_up);
 
-		LoginScreenlet loginScreenlet = (LoginScreenlet) findViewById(R.id.signup_screenlet);
-		loginScreenlet.setListener(this);
+		SignUpScreenlet signUpScreenlet = (SignUpScreenlet) findViewById(R.id.signup_screenlet);
+		signUpScreenlet.setListener(this);
+
 	}
 
 	@Override
-	public void onLoginSuccess(User user) {
+	public void onSignUpFailure(Exception e) {
+
+	}
+
+	@Override
+	public void onSignUpSuccess(User user) {
 		startActivity(new Intent(this, MenuActivity.class));
-	}
-
-	@Override
-	public void onLoginFailure(Exception e) {
-
 	}
 }

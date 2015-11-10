@@ -14,7 +14,8 @@
     <com.liferay.mobile.screens.auth.signup.SignUpScreenlet
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutId="@+id/signup_screenlet"
+        android:id="@+id/signup_screenlet"
+        liferay:layoutId="@layout/sign_up_material"
         liferay:anonymousApiUserName="@string/anonymous_user"
         liferay:anonymousApiPassword="@string/anonymous_password"
         liferay:autoLogin="true" />

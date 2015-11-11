@@ -7,7 +7,7 @@
     <integer name="liferay_company_id">20155</integer>
     <integer name="liferay_group_id">20887</integer>
 
-    <string name="anonymous_user">push@liferay.com</string>
+    <string name="anonymous_user">push</string>
     <string name="anonymous_password">test</string>
 
     <string name="default_user">bruno.admin</string>

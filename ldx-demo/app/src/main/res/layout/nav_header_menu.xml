@@ -13,14 +13,13 @@
         android:id="@+id/user_portrait_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layoutId="@layout/userportrait_default"/>
+        app:layoutId="@layout/userportrait_demo"/>
 
     <TextView
         android:id="@+id/logged_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Android Studio"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
 </LinearLayout>

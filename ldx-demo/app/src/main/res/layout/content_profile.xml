@@ -13,8 +13,8 @@
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
-        app:layoutId="@layout/userportrait_demo"
-        app:editable="true"/>
+        app:editable="true"
+        app:layoutId="@layout/userportrait_demo"/>
 
     <TextView
         android:id="@+id/user_name_label"

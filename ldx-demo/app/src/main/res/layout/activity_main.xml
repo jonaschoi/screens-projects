@@ -6,13 +6,6 @@
                 android:background="@android:color/white"
                 tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="@string/sign_up"/>
-
     <ImageView
         android:id="@+id/background"
         android:layout_width="150dp"
@@ -29,6 +22,18 @@
         android:layout_below="@+id/background"
         liferay:basicAuthMethod="screen_name"
         liferay:layoutId="@layout/login_material"/>
+
+    <Button
+        android:id="@+id/sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColor="@color/material_primary"
+        android:background="@drawable/sign_up"
+        android:layout_below="@+id/login_screenlet"
+        android:layout_alignParentRight="true"
+        android:text="@string/sign_up"/>
 
 
 </RelativeLayout>

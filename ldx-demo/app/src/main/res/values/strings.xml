@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Liferay Apparel</string>
     <string name="app_slogan">For Life Haberdashery</string>
+    <string name="discount">Looking at shoes? Get a sweet discount! Click for details.</string>
 
     <string name="action_settings">Settings</string>
 

@@ -21,8 +21,8 @@ public class NotificationUtil {
 	public static final int NOTIFICATION_ID = 2;
 
 	public static void sendNotification(Context context) {
-		String title = context.getString(R.string.app_slogan);
-		String description = "Looking at shoes? Get a sweet discount! Click for details.";
+		String title = context.getString(R.string.app_name);
+		String description = context.getString(R.string.discount);
 
 		createGlobalNotification(context.getApplicationContext(), title, description);
 	}

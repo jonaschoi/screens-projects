@@ -27,7 +27,7 @@ import java.util.UUID;
 public class ShopApplication extends Application implements BeaconConsumer {
 
 	protected static final String TAG = "ShopApp";
-	private static final double MIN_DISTANCE = 2D;
+	private static final double MIN_DISTANCE = 1D;
 	private Date lastNotificationSent = new Date(0);
 	private BeaconManager beaconManager;
 
@@ -43,12 +43,12 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		beaconManager.setMonitorNotifier(new MonitorNotifier() {
 			@Override
 			public void didEnterRegion(Region region) {
-				Log.i(TAG, "I just saw an beacon for the first time!");
+				Log.i(TAG, "I just saw a beacon for the first time!");
 			}
 
 			@Override
 			public void didExitRegion(Region region) {
-				Log.i(TAG, "I no longer see an beacon");
+				Log.i(TAG, "I no longer see a beacon");
 			}
 
 			@Override
@@ -66,7 +66,7 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		});
 
 		try {
-			String[] beacon_id = getApplicationContext().getResources().getStringArray(R.array.beacon1);
+			String[] beacon_id = getApplicationContext().getResources().getStringArray(R.array.beacon_test);
 
 			Identifier[] identifiers = createIdentifier(beacon_id);
 			Region sth = new Region("shop", identifiers[0], identifiers[1], identifiers[2]);
@@ -112,7 +112,7 @@ public class ShopApplication extends Application implements BeaconConsumer {
 
 	private Date getTimeFiveMinutesAgo() {
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.MINUTE, -1);
+		calendar.add(Calendar.SECOND, -10);
 		return calendar.getTime();
 	}
 }

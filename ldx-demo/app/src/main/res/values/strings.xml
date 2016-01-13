@@ -5,17 +5,6 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string>
-
-    <string name="title_section1">Shop by Category</string>
-    <string name="title_section2">My Wallet</string>
-    <string name="title_section3">Men</string>
-    <string name="title_section4">Women</string>
-    <string name="title_section5">Kids</string>
-    <string name="title_section6">Shoes</string>
-    <string name="title_activity_coupon1">Shoes Coupon</string>
-
     <string-array name="menu_items">
         <item>Shop by Category</item>
         <item>My Wallet</item>
@@ -31,15 +20,15 @@
     <!--AltBeacon layout-->
     <!--<string name="beacon_layout">m:2-3=beac,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25</string>-->
 
-    <string-array name="beacon1">
-        <!--dark blue ibeacon-->
-        <item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>
-        <item>21129</item>
-        <item>6</item>
-    </string-array>
+    <!--dark blue ibeacon-->
+    <!--<string-array name="beacon1">-->
+    <!--<item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>-->
+    <!--<item>21129</item>-->
+    <!--<item>6</item>-->
+    <!--</string-array>-->
 
+    <!--Beacon from Phone App-->
     <string-array name="beacon_test">
-        <!--Beacon from Phone App-->
         <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
         <item>1</item>
         <item>25</item>
@@ -54,8 +43,6 @@
     <integer name="ddl_recordset_id">21958</integer>
     <integer name="ddl_structure_id">21957</integer>
     <string name="title_activity_beacon_receiver">BeaconReceiver</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="sign_up">Sign Up</string>
 
 </resources>

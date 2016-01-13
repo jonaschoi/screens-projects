@@ -12,6 +12,7 @@
         <item>Women</item>
         <item>Kids</item>
         <item>Shoes</item>
+        <item>What\'s New?</item>
     </string-array>
 
     <!--iBeacon layout-->
@@ -42,7 +43,10 @@
     <integer name="article_id_coupon1">21420</integer>
     <integer name="ddl_recordset_id">21958</integer>
     <integer name="ddl_structure_id">21957</integer>
+    <integer name="ap_wcm_id">20109</integer>
     <string name="title_activity_beacon_receiver">BeaconReceiver</string>
     <string name="sign_up">Sign Up</string>
+    <string name="navigation_drawer_open">Nav drawer open</string>
+    <string name="navigation_drawer_close">Nav drawer close</string>
 
 </resources>

@@ -20,6 +20,9 @@
         <item
             android:id="@+id/shoes"
             android:title="Shoes"/>
+        <item
+            android:id="@+id/whats_new"
+            android:title="What's New?"/>
     </group>
 
     <item android:title="Profile Options">

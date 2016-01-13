@@ -22,6 +22,7 @@ import com.liferay.ldxdemo.fragments.KidsFragment;
 import com.liferay.ldxdemo.fragments.MenFragment;
 import com.liferay.ldxdemo.fragments.ShoesFragment;
 import com.liferay.ldxdemo.fragments.WalletFragment;
+import com.liferay.ldxdemo.fragments.WhatsNewFragment;
 import com.liferay.ldxdemo.fragments.WomenFragment;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.screens.context.SessionContext;
@@ -184,6 +185,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 				position = 4;
 			} else if (id == R.id.shoes) {
 				position = 5;
+			} else if (id == R.id.whats_new) {
+				position = 6;
 			}
 
 			inflateFragmentAtPosition(position);
@@ -267,6 +270,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 				return KidsFragment.newInstance();
 			case 5:
 				return ShoesFragment.newInstance();
+			case 6:
+				return WhatsNewFragment.newInstance();
 			default:
 				return CategoryFragment.newInstance();
 		}

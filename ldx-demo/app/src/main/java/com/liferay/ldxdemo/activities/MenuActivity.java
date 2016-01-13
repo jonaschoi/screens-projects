@@ -1,6 +1,7 @@
 package com.liferay.ldxdemo.activities;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -37,7 +38,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 	private static final float MIN_DISTANCE = 200f;
 	private int position;
-	private String[] menuItems = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
+	//	private String[] menuItems = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
+	private String[] menuItems;
 	private DrawerLayout drawer;
 	private NavigationView navigationView;
 	private GestureDetector.OnGestureListener listener = new GestureDetector.OnGestureListener() {
@@ -82,9 +84,15 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 		}
 	};
 
+	protected void createMenuItems() {
+		Resources res = getResources();
+		menuItems = res.getStringArray(R.array.menu_items);
+	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		createMenuItems();
 		setContentView(R.layout.activity_menu);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);

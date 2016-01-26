@@ -6,6 +6,7 @@
              tools:context="com.liferay.ldxdemo.fragments.WhatsNewFragment">
 
     <com.liferay.mobile.screens.assetlist.AssetListScreenlet
+        android:id="@+id/asset_list_material"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         liferay:classNameId="@integer/ap_wcm_id"

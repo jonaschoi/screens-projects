@@ -20,9 +20,9 @@ import com.liferay.ldxdemo.R;
 import com.liferay.ldxdemo.fragments.CategoryFragment;
 import com.liferay.ldxdemo.fragments.KidsFragment;
 import com.liferay.ldxdemo.fragments.MenFragment;
+import com.liferay.ldxdemo.fragments.ReviewFragment;
 import com.liferay.ldxdemo.fragments.ShoesFragment;
 import com.liferay.ldxdemo.fragments.WalletFragment;
-import com.liferay.ldxdemo.fragments.WhatsNewFragment;
 import com.liferay.ldxdemo.fragments.WomenFragment;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.screens.context.SessionContext;
@@ -39,7 +39,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 	private static final float MIN_DISTANCE = 200f;
 	private int position;
-	//	private String[] menuItems = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes"};
+	//	private String[] menuItems = {"Shop by Category", "My Wallet", "Men", "Women", "Kids", "Shoes", "Review"};
 	private String[] menuItems;
 	private DrawerLayout drawer;
 	private NavigationView navigationView;
@@ -185,7 +185,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 				position = 4;
 			} else if (id == R.id.shoes) {
 				position = 5;
-			} else if (id == R.id.whats_new) {
+			} else if (id == R.id.review) {
 				position = 6;
 			}
 
@@ -271,7 +271,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 			case 5:
 				return ShoesFragment.newInstance();
 			case 6:
-				return WhatsNewFragment.newInstance();
+				return ReviewFragment.newInstance();
 			default:
 				return CategoryFragment.newInstance();
 		}

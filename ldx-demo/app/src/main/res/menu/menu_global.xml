@@ -21,8 +21,8 @@
             android:id="@+id/shoes"
             android:title="Shoes"/>
         <item
-            android:id="@+id/whats_new"
-            android:title="What's New?"/>
+            android:id="@+id/review"
+            android:title="Review"/>
     </group>
 
     <item android:title="Profile Options">

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="liferay_server">https://cloud-10-0-20-39.liferay.com/</string>
+    <!--<string name="liferay_server">https://cloud-10-0-20-45.liferay.com/</string>-->
+    <!--<string name="liferay_server">http://192.168.56.1:8080</string>-->
+    <integer name="liferay_company_id">20155</integer>
+    <integer name="liferay_group_id">20887</integer>
+
+    <string name="anonymous_user">push</string>
+    <string name="anonymous_password">test</string>
+
+    <string name="default_user">bruno.admin</string>
+    <string name="default_password">brunoadmin</string>
+
+    <string name="sender_id">872733110030</string>
+
+</resources>

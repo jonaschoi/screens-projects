@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                tools:context=".fragments.ProfileActivity">
+
+    <com.liferay.mobile.screens.userportrait.UserPortraitScreenlet
+        android:id="@+id/user_portrait_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        app:editable="true"
+        app:layoutId="@layout/userportrait_demo"/>
+
+    <TextView
+        android:id="@+id/user_name_label"
+        style="@style/label"
+        android:layout_below="@+id/user_portrait_profile"
+        android:text="User name"/>
+
+    <EditText
+        android:id="@+id/user_name"
+        style="@style/field"
+        android:layout_below="@+id/user_name_label"/>
+
+    <TextView
+        android:id="@+id/user_lastname_label"
+        style="@style/label"
+        android:layout_below="@+id/user_name"
+        android:text="Last name"/>
+
+    <EditText
+        android:id="@+id/user_lastname"
+        style="@style/field"
+        android:layout_below="@+id/user_lastname_label"
+        />
+
+    <TextView
+        android:id="@+id/user_email_label"
+        style="@style/label"
+        android:layout_below="@+id/user_lastname"
+        android:text="Email"/>
+
+    <EditText
+        android:id="@+id/user_email"
+        style="@style/field"
+        android:layout_below="@+id/user_email_label"/>
+
+</RelativeLayout>

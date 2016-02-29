@@ -1,3 +1,30 @@
 <resources>
-    <string name="app_name">dxp-demo</string>
+    <string name="app_name">For Life Bank</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="navigation_drawer_open">Nav drawer open</string>
+    <string name="navigation_drawer_close">Naw drawer close</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- List of names of Screenlets that are mapped to MenuActivity.onNavigationItemSelected -->
+    <string name="screen_1">My Accounts</string>
+    <string name="screen_2">Screen 2</string>
+    <string name="screen_3">Screen 3</string>
+    <string name="screen_4">Screen 4</string>
+    <string name="screen_5">Screen 5</string>
+    <string name="screen_6">Screen 6</string>
+    <string name="screen_7">Screen 7</string>
+
+    <!-- List of names of Screenlets that are mapped to MenuActivity.createMenuItems -->
+    <string-array name="menu_items">
+        <item>My Accounts</item>
+        <item>Screen 2</item>
+        <item>Screen 3</item>
+        <item>Screen 4</item>
+        <item>Screen 5</item>
+        <item>Screen 6</item>
+        <item>Screen 7</item>
+    </string-array>
+
 </resources>

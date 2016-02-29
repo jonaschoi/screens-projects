@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.liferay.ldxdemo"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.liferay.ldxdemo">
 
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
@@ -44,8 +44,7 @@
         <activity
             android:name=".activities.MenuActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activities.SignUpActivity">
-        </activity>
+        <activity android:name=".activities.SignUpActivity"/>
     </application>
 
 </manifest>

@@ -13,4 +13,5 @@
         android:layout_height="wrap_content"
         liferay:basicAuthMethod="screen_name"
         liferay:layoutId="@layout/login_material"/>
+
 </RelativeLayout>

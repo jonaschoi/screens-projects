@@ -22,7 +22,7 @@ public class ProfileActivity extends AppCompatActivity implements UserPortraitLi
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
 
-		User loggedUser = SessionContext.getLoggedUser();
+		User loggedUser = SessionContext.getCurrentUser();
 
 		EditText name = (EditText) findViewById(R.id.user_name);
 		name.setText(loggedUser.getFirstName());

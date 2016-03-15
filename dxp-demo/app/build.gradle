@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion '23.0.2'
 
     defaultConfig {
-        applicationId "com.liferay.dxpdemo"
+        applicationId 'com.liferay.dxpdemo'
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
     buildTypes {
         release {
@@ -20,10 +20,10 @@ android {
     repositories {
         jcenter()
         maven {
-            url "http://dl.bintray.com/nhpatt/liferay-mobile"
+            url 'http://dl.bintray.com/nhpatt/liferay-mobile'
         }
         maven {
-            url "http://dl.bintray.com/tbruyelle/tbruyelle"
+            url 'http://dl.bintray.com/tbruyelle/tbruyelle'
         }
     }
     packagingOptions {
@@ -35,11 +35,11 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.liferay.mobile:liferay-screens:1.4.0.beta1'
-    compile 'com.liferay.mobile:liferay-material-viewset:1.2.4'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.liferay.mobile:liferay-screens:1.4.0.beta8'
+    compile 'com.liferay.mobile:liferay-material-viewset:1.4.0.beta8'
     compile 'com.liferay.mobile:liferay-push:1.0.7'
-    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:design:23.2.1'
     compile 'org.altbeacon:android-beacon-library:2.+'
-    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:support-v4:23.2.1'
 }

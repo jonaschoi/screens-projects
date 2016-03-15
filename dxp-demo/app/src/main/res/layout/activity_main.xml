@@ -11,7 +11,6 @@
         android:id="@+id/login_screenlet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        liferay:basicAuthMethod="screen_name"
-        liferay:layoutId="@layout/login_material"/>
+        liferay:basicAuthMethod="screen_name"/>/
 
 </RelativeLayout>

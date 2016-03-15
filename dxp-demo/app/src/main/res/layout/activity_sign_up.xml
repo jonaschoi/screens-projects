@@ -18,8 +18,7 @@
         liferay:anonymousApiPassword="@string/anonymous_password"
         liferay:anonymousApiUserName="@string/anonymous_user"
         liferay:autoLogin="true"
-        liferay:basicAuthMethod="screen_name"
-        liferay:layoutId="@layout/sign_up_material"/>
+        liferay:basicAuthMethod="screen_name"/>
 
 
 </RelativeLayout>

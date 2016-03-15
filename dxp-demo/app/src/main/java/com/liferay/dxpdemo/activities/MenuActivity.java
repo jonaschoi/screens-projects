@@ -102,8 +102,10 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 		User user = SessionContext.getCurrentUser();
 
-		((TextView) findViewById(R.id.logged_user)).setText(user.getFirstName() + " " + user.getLastName());
-		findViewById(R.id.liferay_portrait).setOnClickListener(this);
+		View headerView = navigationView.getHeaderView(0);
+		TextView loggedUser = (TextView) headerView.findViewById(R.id.logged_user);
+		loggedUser.setText(user.getFirstName() + " " + user.getLastName());
+		headerView.findViewById(R.id.liferay_portrait).setOnClickListener(this);
 	}
 
 	@Override

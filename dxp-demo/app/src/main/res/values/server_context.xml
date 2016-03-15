@@ -10,8 +10,8 @@
     <string name="anonymous_user">push</string>
     <string name="anonymous_password">test</string>
 
-    <string name="default_user">bruno.admin</string>
-    <string name="default_password">brunoadmin</string>
+    <string name="default_user">test1</string>
+    <string name="default_password">test1</string>
 
     <string name="sender_id">872733110030</string>
 

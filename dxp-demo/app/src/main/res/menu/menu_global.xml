@@ -19,7 +19,7 @@
             android:title="@string/screen_5"/>
         <item
             android:id="@+id/screen_6"
-            android:title="@string/screen_6"/>
+            android:title="Graphs"/>
         <item
             android:id="@+id/screen_7"
             android:title="@string/screen_6"/>

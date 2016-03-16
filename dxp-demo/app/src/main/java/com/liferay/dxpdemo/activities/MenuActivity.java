@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.liferay.dxpdemo.R;
+import com.liferay.dxpdemo.fragments.BalanceFragment;
 import com.liferay.dxpdemo.fragments.MyAccountFragment;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.screens.context.SessionContext;
@@ -167,7 +168,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 			if (id == R.id.screen_1) {
 				position = 0;
-			}
+//			}
 //			else if (id == R.id.wallet) {
 //				position = 1;
 //			} else if (id == R.id.men) {
@@ -178,9 +179,9 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 //				position = 4;
 //			} else if (id == R.id.shoes) {
 //				position = 5;
-//			} else if (id == R.id.review) {
-//				position = 6;
-//			}
+			} else if (id == R.id.screen_6) {
+				position = 6;
+			}
 
 			inflateFragmentAtPosition(position);
 		}
@@ -254,8 +255,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 //				return KidsFragment.newInstance();
 //			case 5:
 //				return ShoesFragment.newInstance();
-//			case 6:
-//				return ReviewFragment.newInstance();
+			case 6:
+				return BalanceFragment.newInstance();
 			default:
 				return MyAccountFragment.newInstance();
 		}

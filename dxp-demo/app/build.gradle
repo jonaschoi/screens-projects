@@ -25,6 +25,7 @@ android {
         maven {
             url 'http://dl.bintray.com/tbruyelle/tbruyelle'
         }
+        maven { url "https://jitpack.io" }
     }
     packagingOptions {
         exclude 'META-INF/LICENSE'
@@ -42,4 +43,6 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile 'org.altbeacon:android-beacon-library:2.+'
     compile 'com.android.support:support-v4:23.2.1'
+
+    compile 'com.github.PhilJay:MPAndroidChart:v2.2.3'
 }

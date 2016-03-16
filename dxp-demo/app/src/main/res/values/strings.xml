@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">For Life Bank</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="app_name">Digital Bank</string>
+    <string name="title_activity_menu">My Accounts</string>
 
     <string name="navigation_drawer_open">Nav drawer open</string>
     <string name="navigation_drawer_close">Naw drawer close</string>
-
     <string name="action_settings">Settings</string>
+
+    <string name="login">Username</string>
+    <string name="password">Password</string>
 
     <!-- List of names of Screenlets that are mapped to MenuActivity.onNavigationItemSelected -->
     <string name="screen_1">My Accounts</string>

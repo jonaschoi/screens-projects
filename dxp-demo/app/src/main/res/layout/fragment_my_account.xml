@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         liferay:articleId="21068"
         liferay:groupId="20952"
-        liferay:offlinePolicy="REMOTE_FIRST"/>
+        liferay:offlinePolicy="CACHE_FIRST"/>
 
     <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
         android:id="@+id/investments"
@@ -21,6 +21,6 @@
         android:layout_below="@+id/accounts"
         liferay:articleId="21079"
         liferay:groupId="20952"
-        liferay:offlinePolicy="REMOTE_FIRST"/>
+        liferay:offlinePolicy="CACHE_FIRST"/>
 
 </LinearLayout>

@@ -6,10 +6,20 @@
              tools:context="com.liferay.dxpdemo.fragments.MyAccountFragment">
 
     <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
+        android:id="@+id/accounts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        liferay:groupId="20952"
+        android:layout_height="wrap_content"
         liferay:articleId="21068"
+        liferay:groupId="20952"
+        liferay:offlinePolicy="REMOTE_FIRST"/>
+
+    <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
+        android:id="@+id/investments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accounts"
+        liferay:articleId="21079"
+        liferay:groupId="20952"
         liferay:offlinePolicy="REMOTE_FIRST"/>
 
 </FrameLayout>

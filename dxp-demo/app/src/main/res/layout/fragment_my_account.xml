@@ -8,7 +8,8 @@
     <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        liferay:articleId="21321"
+        liferay:groupId="20952"
+        liferay:articleId="21068"
         liferay:offlinePolicy="REMOTE_FIRST"/>
 
 </FrameLayout>

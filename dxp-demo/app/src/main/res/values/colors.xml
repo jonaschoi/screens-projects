@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#fbfbfb</color>
     <color name="foreground_material_light">#fefefe</color>
-    <color name="colorBackground">#ffffff</color>
+    <color name="colorBackground">#e11d1d</color>
     <color name="background_material_dark">#303030</color>
+    <color name="foreground_material_dark">#d7ffffff</color>
+    <color name="accent_material_dark">#ffffff</color>
+    <color name="primary_material_dark">#20283d</color>
 </resources>

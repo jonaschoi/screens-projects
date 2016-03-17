@@ -168,9 +168,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 			if (id == R.id.screen_1) {
 				position = 0;
-//			}
-//			else if (id == R.id.wallet) {
-//				position = 1;
+			} else if (id == R.id.screen_2) {
+				position = 1;
 //			} else if (id == R.id.men) {
 //				position = 2;
 //			} else if (id == R.id.women) {

@@ -15,8 +15,8 @@
 
     <!-- List of names of Screenlets that are mapped to MenuActivity.onNavigationItemSelected -->
     <string name="screen_1">My Accounts</string>
-    <string name="screen_2">Screen 2</string>
-    <string name="screen_3">Screen 3</string>
+    <string name="screen_2">Investments</string>
+    <string name="screen_3">Notifications</string>
     <string name="screen_4">Screen 4</string>
     <string name="screen_5">Screen 5</string>
     <string name="screen_6">Screen 6</string>
@@ -25,8 +25,8 @@
     <!-- List of names of Screenlets that are mapped to MenuActivity.createMenuItems -->
     <string-array name="menu_items">
         <item>My Accounts</item>
-        <item>Screen 2</item>
-        <item>Screen 3</item>
+        <item>Investments</item>
+        <item>Notifications</item>
         <item>Screen 4</item>
         <item>Screen 5</item>
         <item>Screen 6</item>

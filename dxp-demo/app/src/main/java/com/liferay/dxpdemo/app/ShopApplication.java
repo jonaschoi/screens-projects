@@ -66,12 +66,17 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		});
 
 		try {
-			String[] beacon_id = getApplicationContext().getResources().getStringArray(R.array.beacon_test);
+			String[] beacon_id1 = getApplicationContext().getResources().getStringArray(R.array.beacon_test1);
+			String[] beacon_id2 = getApplicationContext().getResources().getStringArray(R.array.beacon_test2);
 
-			Identifier[] identifiers = createIdentifier(beacon_id);
-			Region sth = new Region("shop", identifiers[0], identifiers[1], identifiers[2]);
-			beaconManager.startMonitoringBeaconsInRegion(sth);
-			beaconManager.startRangingBeaconsInRegion(sth);
+			Identifier[] identifiers1 = createIdentifier(beacon_id1);
+			Identifier[] identifiers2 = createIdentifier(beacon_id2);
+			Region sth1 = new Region("shop1", identifiers1[0], identifiers1[1], identifiers1[2]);
+			Region sth2 = new Region("shop2", identifiers2[0], identifiers2[1], identifiers2[2]);
+			beaconManager.startMonitoringBeaconsInRegion(sth1);
+			beaconManager.startMonitoringBeaconsInRegion(sth2);
+			beaconManager.startRangingBeaconsInRegion(sth1);
+			beaconManager.startRangingBeaconsInRegion(sth2);
 		} catch (RemoteException e) {
 			Log.e(TAG, "Error reading beacons", e);
 		}

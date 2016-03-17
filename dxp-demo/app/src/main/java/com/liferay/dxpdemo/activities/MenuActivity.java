@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.liferay.dxpdemo.R;
 import com.liferay.dxpdemo.fragments.BalanceFragment;
+import com.liferay.dxpdemo.fragments.InvestmentFragment;
 import com.liferay.dxpdemo.fragments.MyAccountFragment;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.screens.context.SessionContext;
@@ -244,8 +245,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 	private Fragment getFragmentToRender(int position) {
 		switch (position) {
-//			case 1:
-//				return WalletFragment.newInstance();
+			case 1:
+				return InvestmentFragment.newInstance();
 //			case 2:
 //				return MenFragment.newInstance();
 //			case 3:

@@ -9,6 +9,8 @@
     <string name="app_title_msg2">Title 2</string>
     <string name="app_text_msg1">A local branch is nearby if you want to discuss retirement planning with a banker.</string>
     <string name="app_text_msg2">Skip the line! Your banker is available to speak with you right now.</string>
+    <integer name="ddl_recordset_id_transfer">22655</integer>
+    <integer name="ddl_structure_id_transfer">22651</integer>
 
     <string name="login">Username</string>
     <string name="password">Password</string>
@@ -47,7 +49,14 @@
     <!--</string-array>-->
 
     <!--Beacon from Phone App-->
-    <string-array name="beacon_test">
+    <string-array name="beacon_test1">
+        <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
+        <item>1</item>
+        <item>25</item>
+    </string-array>
+
+    <!-- Other Beacon-->
+    <string-array name="beacon_test2">
         <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
         <item>1</item>
         <item>25</item>

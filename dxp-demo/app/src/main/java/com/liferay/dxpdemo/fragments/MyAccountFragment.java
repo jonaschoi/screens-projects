@@ -24,6 +24,6 @@ public class MyAccountFragment extends AbstractWebContentFragment implements Vie
 
 	@Override
 	public void onClick(View v) {
-		((MenuActivity) getActivity()).inflateFragmentAtPosition(1);
+		((MenuActivity) getActivity()).inflateFragmentAtPosition(2);
 	}
 }

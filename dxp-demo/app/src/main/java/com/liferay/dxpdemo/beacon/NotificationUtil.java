@@ -22,9 +22,10 @@ public class NotificationUtil {
 
 	public static void sendNotification(Context context) {
 		String title = context.getString(R.string.app_name);
-		String description = context.getString(R.string.app_text_msg1);
+		String description1 = context.getString(R.string.app_text_msg1);
+		String description2 = context.getString(R.string.app_text_msg2);
 
-		createGlobalNotification(context.getApplicationContext(), title, description);
+		createGlobalNotification(context.getApplicationContext(), title, description1);
 	}
 
 	private static void createGlobalNotification(Context context, String title, String description) {

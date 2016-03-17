@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:liferay="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+    <com.liferay.mobile.screens.ddl.form.DDLFormScreenlet
+        android:id="@+id/form_transfer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        liferay:layoutId="@layout/ddl_form_material"
+        liferay:offlinePolicy="REMOTE_FIRST"
+        liferay:recordSetId="@integer/ddl_recordset_id_transfer"
+        liferay:structureId="@integer/ddl_structure_id_transfer"/>
+
+</RelativeLayout>

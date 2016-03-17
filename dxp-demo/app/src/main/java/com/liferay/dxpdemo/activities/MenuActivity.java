@@ -20,6 +20,7 @@ import com.liferay.dxpdemo.R;
 import com.liferay.dxpdemo.fragments.BalanceFragment;
 import com.liferay.dxpdemo.fragments.InvestmentFragment;
 import com.liferay.dxpdemo.fragments.MyAccountFragment;
+import com.liferay.dxpdemo.fragments.NotificationsFragment;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.User;
@@ -171,8 +172,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 				position = 0;
 			} else if (id == R.id.screen_2) {
 				position = 1;
-//			} else if (id == R.id.men) {
-//				position = 2;
+			} else if (id == R.id.screen_3) {
+				position = 2;
 //			} else if (id == R.id.women) {
 //				position = 3;
 //			} else if (id == R.id.kids) {
@@ -247,8 +248,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 		switch (position) {
 			case 1:
 				return InvestmentFragment.newInstance();
-//			case 2:
-//				return MenFragment.newInstance();
+			case 2:
+				return NotificationsFragment.newInstance();
 //			case 3:
 //				return WomenFragment.newInstance();
 //			case 4:

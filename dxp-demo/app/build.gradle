@@ -33,9 +33,11 @@ android {
     }
 }
 
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.liferay.mobile:liferay-screens:1.4.0.beta8'
     compile 'com.liferay.mobile:liferay-material-viewset:1.4.0.beta8'
@@ -43,6 +45,5 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile 'org.altbeacon:android-beacon-library:2.+'
     compile 'com.android.support:support-v4:23.2.1'
-
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.3'
 }

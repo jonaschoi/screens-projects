@@ -21,7 +21,7 @@
     <string name="screen_3">Notifications</string>
     <string name="screen_4">Screen 4</string>
     <string name="screen_5">Screen 5</string>
-    <string name="screen_6">Screen 6</string>
+    <string name="screen_6">Graphs</string>
     <string name="screen_7">Screen 7</string>
 
     <!-- List of names of Screenlets that are mapped to MenuActivity.createMenuItems -->
@@ -31,7 +31,7 @@
         <item>Notifications</item>
         <item>Screen 4</item>
         <item>Screen 5</item>
-        <item>Screen 6</item>
+        <item>Graphs</item>
         <item>Screen 7</item>
     </string-array>
 

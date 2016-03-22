@@ -30,6 +30,8 @@ public class ShopApplication extends Application implements BeaconConsumer {
 	private static final double MIN_DISTANCE = 2D;
 	private Date lastNotificationSent = new Date(0);
 	private BeaconManager beaconManager;
+	private Region region1;
+	private Region region2;
 
 	@Override
 	public void onCreate() {
@@ -56,27 +58,26 @@ public class ShopApplication extends Application implements BeaconConsumer {
 				Log.i(TAG, "I have just switched from seeing/not seeing beacons: " + state);
 			}
 		});
-
-
+		
 		beaconManager.setRangeNotifier(new RangeNotifier() {
 			@Override
 			public void didRangeBeaconsInRegion(Collection<Beacon> collection, Region region) {
-				processNearBeacons(collection);
+				processNearBeacons(collection, region);
 			}
 		});
 
 		try {
-			String[] beacon_id1 = getApplicationContext().getResources().getStringArray(R.array.beacon_test1);
-			String[] beacon_id2 = getApplicationContext().getResources().getStringArray(R.array.beacon_test2);
+			String[] beacon_id1 = getResources().getStringArray(R.array.beacon_test1);
+			String[] beacon_id2 = getResources().getStringArray(R.array.beacon_test2);
 
 			Identifier[] identifiers1 = createIdentifier(beacon_id1);
 			Identifier[] identifiers2 = createIdentifier(beacon_id2);
-			Region sth1 = new Region("shop1", identifiers1[0], identifiers1[1], identifiers1[2]);
-			Region sth2 = new Region("shop2", identifiers2[0], identifiers2[1], identifiers2[2]);
-			beaconManager.startMonitoringBeaconsInRegion(sth1);
-			beaconManager.startMonitoringBeaconsInRegion(sth2);
-			beaconManager.startRangingBeaconsInRegion(sth1);
-			beaconManager.startRangingBeaconsInRegion(sth2);
+			region1 = new Region("shop1", identifiers1[0], identifiers1[1], identifiers1[2]);
+			region2 = new Region("shop2", identifiers2[0], identifiers2[1], identifiers2[2]);
+			beaconManager.startMonitoringBeaconsInRegion(region1);
+			beaconManager.startMonitoringBeaconsInRegion(region2);
+			beaconManager.startRangingBeaconsInRegion(region1);
+			beaconManager.startRangingBeaconsInRegion(region2);
 		} catch (RemoteException e) {
 			Log.e(TAG, "Error reading beacons", e);
 		}
@@ -99,7 +100,7 @@ public class ShopApplication extends Application implements BeaconConsumer {
 		beaconManager.bind(this);
 	}
 
-	private void processNearBeacons(Collection<Beacon> collection) {
+	private void processNearBeacons(Collection<Beacon> collection, Region region) {
 		for (Beacon beacon : collection) {
 			double distance = beacon.getDistance();
 			if (distance < MIN_DISTANCE) {
@@ -107,7 +108,11 @@ public class ShopApplication extends Application implements BeaconConsumer {
 				Log.e("Beacon close, at: ", String.valueOf(distance) + " meters");
 
 				if (lastNotificationSent.before(getTimeFiveMinutesAgo())) {
-					NotificationUtil.sendNotificationMsg1(getApplicationContext());
+
+					String message = region.equals(region1) ? getString(R.string.app_text_msg1)
+							: getString(R.string.app_text_msg2);
+
+					NotificationUtil.sendNotificationMsg(getApplicationContext(), message);
 
 					lastNotificationSent = new Date();
 				}

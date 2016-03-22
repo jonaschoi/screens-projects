@@ -9,8 +9,12 @@
     <string name="app_title_msg2">Title 2</string>
     <string name="app_text_msg1">A local branch is nearby if you want to discuss retirement planning with a banker.</string>
     <string name="app_text_msg2">Skip the line! Your banker is available to speak with you right now.</string>
-    <integer name="ddl_recordset_id_transfer">22655</integer>
-    <integer name="ddl_structure_id_transfer">22651</integer>
+    <integer name="ddl_recordset_id_transfer">22566</integer>
+    <integer name="ddl_structure_id_transfer">22569</integer>
+    <integer name="wcm_accounts_id">22236</integer>
+    <integer name="wcm_investments_id">22247</integer>
+    <integer name="wcm_invest_details_id">22266</integer>
+    <integer name="wcm_notification_id">22285</integer>
 
     <string name="login">Username</string>
     <string name="password">Password</string>

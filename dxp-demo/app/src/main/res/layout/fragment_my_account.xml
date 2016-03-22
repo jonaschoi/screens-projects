@@ -14,14 +14,19 @@
         liferay:groupId="20952"
         liferay:offlinePolicy="CACHE_FIRST"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <!--<ImageButton-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:onClick="onClick"-->
+    <!--android:src="@drawable/investment_card"/>-->
+
+
     <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
         android:id="@+id/investments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/accounts"
+        android:onClick="onClick"
         liferay:articleId="21079"
         liferay:groupId="20952"
         liferay:offlinePolicy="CACHE_FIRST"/>

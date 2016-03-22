@@ -107,7 +107,7 @@ public class ShopApplication extends Application implements BeaconConsumer {
 				Log.e("Beacon close, at: ", String.valueOf(distance) + " meters");
 
 				if (lastNotificationSent.before(getTimeFiveMinutesAgo())) {
-					NotificationUtil.sendNotification(getApplicationContext());
+					NotificationUtil.sendNotificationMsg1(getApplicationContext());
 
 					lastNotificationSent = new Date();
 				}

@@ -43,4 +43,7 @@ dependencies {
     compile 'org.altbeacon:android-beacon-library:2.+'
     compile 'com.android.support:support-v4:23.2.1'
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.3'
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.1') {
+        exclude module: 'support-v4'
+    }
 }

@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.liferay.dxpdemo.R;
 import com.liferay.dxpdemo.fragments.BalanceFragment;
+import com.liferay.dxpdemo.fragments.FormFragment;
 import com.liferay.dxpdemo.fragments.InvestmentFragment;
 import com.liferay.dxpdemo.fragments.MyAccountFragment;
 import com.liferay.dxpdemo.fragments.NotificationsFragment;
@@ -174,8 +175,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 				position = 1;
 			} else if (id == R.id.screen_3) {
 				position = 2;
-//			} else if (id == R.id.women) {
-//				position = 3;
+			} else if (id == R.id.form_transfer) {
+				position = 3;
 //			} else if (id == R.id.kids) {
 //				position = 4;
 //			} else if (id == R.id.shoes) {
@@ -225,7 +226,17 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 	@Override
 	protected void onPushNotificationReceived(JSONObject jsonObject) {
-
+//		runOnUiThread(new Runnable() {
+//			@Override
+//			public void run() {
+//				WebContentDisplayScreenlet webContentDisplayScreenlet = (WebContentDisplayScreenlet) findViewById(R.id.notifications);
+//				if (webContentDisplayScreenlet != null) {
+//					Crouton.clearCroutonsForActivity(MenuActivity.this);
+//					LiferayCrouton.info(MenuActivity.this, "Reloading list...");
+//					webContentDisplayScreenlet.load();
+//				}
+//			}
+//		});
 	}
 
 	@Override
@@ -250,8 +261,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 				return InvestmentFragment.newInstance();
 			case 2:
 				return NotificationsFragment.newInstance();
-//			case 3:
-//				return WomenFragment.newInstance();
+			case 3:
+				return FormFragment.newInstance();
 //			case 4:
 //				return KidsFragment.newInstance();
 //			case 5:

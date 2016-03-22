@@ -22,9 +22,6 @@ android {
         maven {
             url 'http://dl.bintray.com/nhpatt/liferay-mobile'
         }
-        maven {
-            url 'http://dl.bintray.com/tbruyelle/tbruyelle'
-        }
         maven { url "https://jitpack.io" }
     }
     packagingOptions {
@@ -39,8 +36,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.liferay.mobile:liferay-screens:1.4.0.beta8'
-    compile 'com.liferay.mobile:liferay-material-viewset:1.4.0.beta8'
+    compile 'com.liferay.mobile:liferay-screens:1.4.0.beta9'
+    compile 'com.liferay.mobile:liferay-material-viewset:1.4.0.beta9'
     compile 'com.liferay.mobile:liferay-push:1.0.7'
     compile 'com.android.support:design:23.2.1'
     compile 'org.altbeacon:android-beacon-library:2.+'

@@ -20,18 +20,10 @@ public class NotificationUtil {
 
 	public static final int NOTIFICATION_ID = 2;
 
-	public static void sendNotificationMsg1(Context context) {
+	public static void sendNotificationMsg(Context context, String message) {
 		String title = context.getString(R.string.app_name);
-		String description1 = context.getString(R.string.app_text_msg1);
 
-		createGlobalNotification(context.getApplicationContext(), title, description1);
-	}
-
-	public static void sendNotificationMsg2(Context context) {
-		String title = context.getString(R.string.app_name);
-		String description2 = context.getString(R.string.app_text_msg2);
-
-		createGlobalNotification(context.getApplicationContext(), title, description2);
+		createGlobalNotification(context.getApplicationContext(), title, message);
 	}
 
 	private static void createGlobalNotification(Context context, String title, String description) {

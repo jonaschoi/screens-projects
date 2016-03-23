@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#fbfbfb</color>
     <color name="foreground_material_light">#fefefe</color>
-    <color name="colorBackground">#c10707</color>
+    <color name="colorBackground">#e02424</color>
     <color name="background_material_dark">#303030</color>
     <color name="foreground_material_dark">#d7ffffff</color>
     <color name="accent_material_dark">#ffffff</color>
@@ -15,4 +15,6 @@
     <color name="primary_text_material_dark">#e20606</color>
     <color name="background_material_light">#ac0303</color>
     <color name="background_material_dark_1">#ffffff</color>
+    <color name="secondary_text_material_dark">#c12b2b</color>
+    <color name="primary_dark_material_dark">#000000</color>
 </resources>

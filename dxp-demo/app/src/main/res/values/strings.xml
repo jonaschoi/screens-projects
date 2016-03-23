@@ -54,16 +54,16 @@
 
     <!--Beacon from Phone App-->
     <string-array name="beacon_test1">
-        <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
-        <item>1</item>
-        <item>25</item>
+        <item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>
+        <item>303</item>
+        <item>28888</item>
     </string-array>
 
     <!-- Other Beacon-->
     <string-array name="beacon_test2">
-        <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
-        <item>1</item>
-        <item>25</item>
+        <item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>
+        <item>64456</item>
+        <item>2</item>
     </string-array>
 
 </resources>

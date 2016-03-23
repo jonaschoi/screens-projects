@@ -38,7 +38,7 @@
 
     <style name="DXPDark" parent="Theme.AppCompat.NoActionBar">
         <item name="android:colorBackground">@color/background_material_dark_1</item>
-        <item name="android:textColorPrimary">@color/primary_text_material_dark</item>
-        <item name="android:colorButtonNormal">#FF20283D</item>
+        <item name="android:colorButtonNormal">@color/primary_material_dark</item>
+        <item name="android:colorControlNormal">@color/primary_material_dark</item>
     </style>
 </resources>

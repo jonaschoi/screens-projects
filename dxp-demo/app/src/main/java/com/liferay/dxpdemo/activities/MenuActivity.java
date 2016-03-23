@@ -175,7 +175,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 				position = 1;
 			} else if (id == R.id.screen_3) {
 				position = 2;
-			} else if (id == R.id.form_transfer) {
+			} else if (id == R.id.screen_4) {
 				position = 3;
 //			} else if (id == R.id.kids) {
 //				position = 4;
@@ -232,7 +232,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 //				WebContentDisplayScreenlet webContentDisplayScreenlet = (WebContentDisplayScreenlet) findViewById(R.id.notifications);
 //				if (webContentDisplayScreenlet != null) {
 //					Crouton.clearCroutonsForActivity(MenuActivity.this);
-//					LiferayCrouton.info(MenuActivity.this, "Reloading list...");
+//					Snackbar.make(activity.findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
 //					webContentDisplayScreenlet.load();
 //				}
 //			}

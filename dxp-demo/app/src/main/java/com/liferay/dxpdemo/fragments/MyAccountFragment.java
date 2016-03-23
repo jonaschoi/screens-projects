@@ -42,7 +42,7 @@ public class MyAccountFragment extends AbstractWebContentFragment implements Web
 
 	@Override
 	public void onWebContentClicked(MotionEvent event) {
-		((MenuActivity) getActivity()).inflateFragmentAtPosition(2);
+		((MenuActivity) getActivity()).inflateFragmentAtPosition(1);
 	}
 
 	@Override

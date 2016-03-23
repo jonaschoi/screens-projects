@@ -4,9 +4,15 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#fbfbfb</color>
     <color name="foreground_material_light">#fefefe</color>
-    <color name="colorBackground">#e11d1d</color>
+    <color name="colorBackground">#c10707</color>
     <color name="background_material_dark">#303030</color>
     <color name="foreground_material_dark">#d7ffffff</color>
     <color name="accent_material_dark">#ffffff</color>
     <color name="primary_material_dark">#20283d</color>
+    <color name="primary_dark_material_light_1">#e01a1a</color>
+    <color name="primary_dark_material_light">#000000</color>
+    <color name="accent_material_light">#cecece</color>
+    <color name="primary_text_material_dark">#e20606</color>
+    <color name="background_material_light">#ac0303</color>
+    <color name="background_material_dark_1">#ffffff</color>
 </resources>

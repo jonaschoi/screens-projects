@@ -14,15 +14,15 @@
         <item
             android:id="@+id/screen_4"
             android:title="@string/screen_4"/>
-        <item
-            android:id="@+id/screen_5"
-            android:title="@string/screen_5"/>
-        <item
-            android:id="@+id/screen_6"
-            android:title="@string/screen_6"/>
-        <item
-            android:id="@+id/screen_7"
-            android:title="@string/screen_7"/>
+        <!--<item-->
+        <!--android:id="@+id/screen_5"-->
+        <!--android:title="@string/screen_5"/>-->
+        <!--<item-->
+        <!--android:id="@+id/screen_6"-->
+        <!--android:title="@string/screen_6"/>-->
+        <!--<item-->
+        <!--android:id="@+id/screen_7"-->
+        <!--android:title="@string/screen_7"/>-->
     </group>
 
     <item android:title="Profile Options">

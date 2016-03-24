@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
         liferay:basicAuthMethod="screen_name"
+        liferay:credentialsStorage="auto"
         liferay:layoutId="@layout/login_material"/>
 
 </RelativeLayout>

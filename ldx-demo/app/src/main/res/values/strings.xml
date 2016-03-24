@@ -22,18 +22,18 @@
     <!--<string name="beacon_layout">m:2-3=beac,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25</string>-->
 
     <!--dark blue ibeacon-->
-    <!--<string-array name="beacon1">-->
-    <!--<item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>-->
-    <!--<item>21129</item>-->
-    <!--<item>6</item>-->
-    <!--</string-array>-->
+    <string-array name="beacon_test">
+    <item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>
+    <item>64453</item>
+    <item>1</item>
+    </string-array>
 
     <!--Beacon from Phone App-->
-    <string-array name="beacon_test">
-        <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
-        <item>1</item>
-        <item>25</item>
-    </string-array>
+    <!--<string-array name="beacon_test">-->
+        <!--<item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>-->
+        <!--<item>1</item>-->
+        <!--<item>25</item>-->
+    <!--</string-array>-->
 
     <integer name="article_id_category">56200</integer>
     <integer name="article_id_men">58586</integer>

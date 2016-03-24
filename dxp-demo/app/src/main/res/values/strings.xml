@@ -23,20 +23,20 @@
     <string name="screen_1">My Accounts</string>
     <string name="screen_2">Investments</string>
     <string name="screen_3">Notifications</string>
-    <string name="screen_4">Transfers</string>
-    <string name="screen_5">Screen4</string>
-    <string name="screen_6">Graphs</string>
-    <string name="screen_7">Screen 7</string>
+    <string name="screen_4">Pending Applications</string>
+    <!--<string name="screen_5">Screen5</string>-->
+    <!--<string name="screen_6">Graphs</string>-->
+    <!--<string name="screen_7">Screen 7</string>-->
 
     <!-- List of names of Screenlets that are mapped to MenuActivity.createMenuItems -->
     <string-array name="menu_items">
         <item>My Accounts</item>
         <item>Investments</item>
         <item>Notifications</item>
-        <item>Transfers</item>
-        <item>Screen 5</item>
-        <item>Graphs</item>
-        <item>Screen 7</item>
+        <item>Pending Applications</item>
+        <!--<item>Screen 5</item>-->
+        <!--<item>Graphs</item>-->
+        <!--<item>Screen 7</item>-->
     </string-array>
 
     <!--iBeacon layout-->

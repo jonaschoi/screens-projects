@@ -181,8 +181,8 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 //				position = 4;
 //			} else if (id == R.id.shoes) {
 //				position = 5;
-			} else if (id == R.id.screen_6) {
-				position = 6;
+//			} else if (id == R.id.screen_6) {
+//				position = 6;
 			}
 
 			inflateFragmentAtPosition(position);

@@ -47,7 +47,7 @@ public class NotificationUtil {
 
 	private static PendingIntent createPendingIntentForNotifications(Context context) {
 		Intent resultIntent = new Intent(context, MenuActivity.class);
-		resultIntent.putExtra("position", 1);
+		resultIntent.putExtra("position", 2);
 
 		TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
 		stackBuilder.addNextIntent(resultIntent);

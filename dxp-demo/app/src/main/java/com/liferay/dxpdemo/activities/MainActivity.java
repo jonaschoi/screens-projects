@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
 
 import com.liferay.dxpdemo.BuildConfig;
 import com.liferay.dxpdemo.R;
@@ -34,10 +33,10 @@ public class MainActivity extends AppCompatActivity implements LoginListener, Vi
 		loginScreenlet.setListener(this);
 
 		if (BuildConfig.DEBUG) {
-			TextView login = (TextView) loginScreenlet.findViewById(R.id.liferay_login);
-			login.setText(R.string.default_user);
-			TextView password = (TextView) loginScreenlet.findViewById(R.id.liferay_password);
-			password.setText(R.string.default_password);
+//			TextView login = (TextView) loginScreenlet.findViewById(R.id.liferay_login);
+//			login.setText(R.string.default_user);
+//			TextView password = (TextView) loginScreenlet.findViewById(R.id.liferay_password);
+//			password.setText(R.string.default_password);
 		}
 	}
 

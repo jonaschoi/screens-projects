@@ -9,19 +9,19 @@
     <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
         android:id="@+id/accounts"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         liferay:articleId="@integer/wcm_accounts_id"
         liferay:groupId="@integer/liferay_group_id"
-        liferay:offlinePolicy="CACHE_FIRST"/>
+        liferay:offlinePolicy="REMOTE_FIRST"/>
 
-    <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
-        android:id="@+id/investments"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/accounts"
-        android:onClick="onClick"
-        liferay:articleId="@integer/wcm_investments_id"
-        liferay:groupId="@integer/liferay_group_id"
-        liferay:offlinePolicy="CACHE_FIRST"/>
+    <!--<com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet-->
+    <!--android:id="@+id/investments"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/accounts"-->
+    <!--android:onClick="onClick"-->
+    <!--liferay:articleId="@integer/wcm_investments_id"-->
+    <!--liferay:groupId="@integer/liferay_group_id"-->
+    <!--liferay:offlinePolicy="CACHE_FIRST"/>-->
 
 </LinearLayout>

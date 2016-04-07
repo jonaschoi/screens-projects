@@ -1,18 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="android:textColor">#FFFFFF</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:colorButtonNormal">#FF20283D</item>
-        <item name="android:textColor">@color/textColorPrimary</item>
-    </style>
-
     <style name="AppTheme.AppBarOverlay" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
     </style>
 
@@ -36,9 +23,8 @@
         <item name="android:focusable">false</item>
     </style>
 
-    <style name="DXPDark" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:colorBackground">@color/background_material_dark_1</item>
-        <item name="android:colorButtonNormal">@color/primary_material_dark</item>
-        <item name="android:colorControlNormal">@color/primary_material_dark</item>
+    <style name="DXPDark" parent="@style/material_theme">
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryDark</item>
     </style>
 </resources>

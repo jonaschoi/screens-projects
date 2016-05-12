@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="material_primary_crouton">#29527F</color>
+    <color name="material_primary">#29527F</color>
+    <color name="material_primary_dark">#29527F</color>
+    <color name="material_primary_light">#B2DFDB</color>
+    <color name="material_accent">#FFEB3B</color>
+    <color name="material_primary_text">#212121</color>
+    <color name="material_secondary_text">#727272</color>
+
+    <color name="colorPrimary">#29527F</color>
+    <color name="colorPrimaryDark">#29527F</color>
+    <color name="colorPrimaryLight">#B2DFDB</color>
+    <color name="colorAccent">#B2DFDB</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#727272</color>
+</resources>

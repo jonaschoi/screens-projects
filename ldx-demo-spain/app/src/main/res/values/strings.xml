@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Ecclectic</string>
+    <string name="app_slogan">Ecclectic Style</string>
+    <string name="discount">Looking at shoes? Get a sweet discount! Click for details.</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string-array name="menu_items">
+        <item>Shop by Category</item>
+        <item>My Wallet</item>
+        <item>Men</item>
+        <item>Women</item>
+        <item>Kids</item>
+        <item>Shoes</item>
+        <item>Review</item>
+    </string-array>
+
+    <!--iBeacon layout-->
+    <string name="beacon_layout">m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24</string>
+
+    <!--AltBeacon layout-->
+    <!--<string name="beacon_layout">m:2-3=beac,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25</string>-->
+
+    <!--dark blue ibeacon-->
+    <!--<string-array name="beacon1">-->
+    <!--<item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>-->
+    <!--<item>21129</item>-->
+    <!--<item>6</item>-->
+    <!--</string-array>-->
+
+    <!--Beacon from Phone App-->
+    <string-array name="beacon_test">
+        <item>2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6</item>
+        <item>1</item>
+        <item>25</item>
+    </string-array>
+
+    <integer name="article_id_category">48418</integer>
+    <integer name="article_id_men">46757</integer>
+    <integer name="article_id_women">46757</integer>
+    <integer name="article_id_kids">44830</integer>
+    <integer name="article_id_shoes">46967</integer>
+    <integer name="article_id_coupon1">45643</integer>
+    <integer name="ddl_recordset_id">45153</integer>
+    <integer name="ddl_structure_id">45141</integer>
+
+
+    <integer name="ddl_recordset_id_review">69491</integer>
+    <integer name="ddl_structure_id_review">69487</integer>
+
+
+
+    <integer name="ap_wcm_id">20109</integer>
+    <string name="title_activity_beacon_receiver">BeaconReceiver</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="navigation_drawer_open">Nav drawer open</string>
+    <string name="navigation_drawer_close">Nav drawer close</string>
+    <string name="thanks_for_buying">¡Muchas gracias por comprar!</string>
+    <string name="review">¿Puedes darnos tu opinión?</string>
+    <string name="sorry_for_the_experience">Lamentamos la experiencia</string>
+    <string name="we_will_get_in_contact">Un representante se pondrá en contacto contigo para ayudarte</string>
+
+</resources>

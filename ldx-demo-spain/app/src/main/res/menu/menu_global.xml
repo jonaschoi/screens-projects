@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/category"
+            android:title="Shop by Category"/>
+        <item
+            android:id="@+id/wallet"
+            android:title="My Wallet"/>
+        <item
+            android:id="@+id/men"
+            android:title="Men"/>
+        <item
+            android:id="@+id/women"
+            android:title="Women"/>
+        <item
+            android:id="@+id/kids"
+            android:title="Kids"/>
+        <item
+            android:id="@+id/shoes"
+            android:title="Shoes"/>
+        <item
+            android:id="@+id/review"
+            android:title="Review"/>
+    </group>
+
+    <item android:title="Profile Options">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/profile"
+                    android:title="Profile"/>
+            </group>
+        </menu>
+    </item>
+
+
+</menu>

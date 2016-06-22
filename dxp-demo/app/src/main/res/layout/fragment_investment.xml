@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         liferay:articleId="@integer/wcm_invest_details_id"
-        liferay:groupId="@integer/liferay_group_id"
+        liferay:groupId="@string/liferay_group_id"
         liferay:offlinePolicy="REMOTE_FIRST"/>
 
 </FrameLayout>

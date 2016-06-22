@@ -3,6 +3,7 @@ package com.liferay.dxpdemo.activities;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -23,9 +24,11 @@ import com.liferay.dxpdemo.fragments.InvestmentFragment;
 import com.liferay.dxpdemo.fragments.MyAccountFragment;
 import com.liferay.dxpdemo.fragments.NotificationsFragment;
 import com.liferay.mobile.android.service.Session;
+import com.liferay.mobile.screens.context.LiferayServerContext;
 import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.push.PushScreensActivity;
+import com.liferay.mobile.screens.util.LiferayLogger;
 
 import org.json.JSONObject;
 
@@ -146,17 +149,40 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-
-		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_settings) {
-			return true;
+		switch (item.getItemId()) {
+			case R.id.tests:
+				changeEnvironment("tests");
+				break;
+			case R.id.production:
+				changeEnvironment("prod");
+				break;
+			case R.id.development:
+			default:
+				changeEnvironment("dev");
 		}
 
 		return super.onOptionsItemSelected(item);
+	}
+
+	private void changeEnvironment(String prefix) {
+		LiferayServerContext.setServer(getId("liferay_server", prefix, R.string.liferay_server));
+		LiferayServerContext.setCompanyId(Long.valueOf(getId("liferay_company_id", prefix, R.string.liferay_company_id)));
+		LiferayServerContext.setGroupId(Long.valueOf(getId("liferay_server", prefix, R.string.liferay_group_id)));
+	}
+
+	private String getId(String property, String prefix, int defaultValue) {
+		try {
+			return getString(R.string.class.getField(property + "_" + prefix).getInt(null));
+		}
+		catch (IllegalAccessException | NoSuchFieldException e) {
+			LiferayLogger.e("property does not exist");
+		}
+		return getString(defaultValue);
+	}
+
+	@NonNull
+	private String getId(int anInt) throws IllegalAccessException, NoSuchFieldException {
+		return getString(anInt);
 	}
 
 	@SuppressWarnings("StatementWithEmptyBody")

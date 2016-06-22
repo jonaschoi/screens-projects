@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 import com.liferay.dxpdemo.R;
 import com.liferay.dxpdemo.activities.MenuActivity;
-import com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayListener;
-import com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet;
+import com.liferay.mobile.screens.webcontent.WebContent;
+import com.liferay.mobile.screens.webcontent.display.WebContentDisplayListener;
+import com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet;
 
 public class MyAccountFragment extends AbstractWebContentFragment implements WebContentDisplayListener {
 
@@ -31,7 +33,7 @@ public class MyAccountFragment extends AbstractWebContentFragment implements Web
 	}
 
 	@Override
-	public String onWebContentReceived(WebContentDisplayScreenlet source, String html) {
+	public WebContent onWebContentReceived(WebContentDisplayScreenlet source, WebContent html) {
 		return null;
 	}
 
@@ -41,7 +43,7 @@ public class MyAccountFragment extends AbstractWebContentFragment implements Web
 	}
 
 	@Override
-	public void onWebContentClicked(MotionEvent event) {
+	public void onWebContentClicked(WebView.HitTestResult result, MotionEvent event) {
 		((MenuActivity) getActivity()).inflateFragmentAtPosition(1);
 	}
 

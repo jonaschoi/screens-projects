@@ -27,7 +27,7 @@ import java.util.UUID;
 public class ShopApplication extends Application implements BeaconConsumer {
 
 	protected static final String TAG = "ShopApp";
-	private static final double MIN_DISTANCE = 2D;
+	private static final double MIN_DISTANCE = 1D;
 	private Date lastNotificationSent = new Date(0);
 	private BeaconManager beaconManager;
 

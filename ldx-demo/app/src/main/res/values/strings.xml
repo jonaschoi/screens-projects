@@ -24,8 +24,8 @@
     <!--dark blue ibeacon-->
     <string-array name="beacon_test">
     <item>b9407f30-f5f8-466e-aff9-25556b57fe6d</item>
-    <item>64453</item>
-    <item>1</item>
+        <item>304</item>
+        <item>15877</item>
     </string-array>
 
     <!--Beacon from Phone App-->

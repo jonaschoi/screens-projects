@@ -164,10 +164,10 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void changeEnvironment(String prefix) {
-		LiferayServerContext.setServer(getId("liferay_server", prefix, R.string.liferay_server));
-		LiferayServerContext.setCompanyId(Long.valueOf(getId("liferay_company_id", prefix, R.string.liferay_company_id)));
-		LiferayServerContext.setGroupId(Long.valueOf(getId("liferay_server", prefix, R.string.liferay_group_id)));
+	private void changeEnvironment(String suffix) {
+		LiferayServerContext.setServer(getId("liferay_server", suffix, R.string.liferay_server));
+		LiferayServerContext.setCompanyId(Long.valueOf(getId("liferay_company_id", suffix, R.string.liferay_company_id)));
+		LiferayServerContext.setGroupId(Long.valueOf(getId("liferay_server", suffix, R.string.liferay_group_id)));
 	}
 
 	private String getId(String property, String prefix, int defaultValue) {

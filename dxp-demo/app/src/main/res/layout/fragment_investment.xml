@@ -5,7 +5,7 @@
              android:layout_height="match_parent"
              tools:context="com.liferay.dxpdemo.fragments.InvestmentFragment">
 
-    <com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
+    <com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
         android:id="@+id/investments_details"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -4,27 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.liferay.mobile.android.callback.typed.JSONObjectCallback;
 import com.liferay.mobile.android.service.Session;
-import com.liferay.mobile.android.task.callback.typed.JSONObjectAsyncTaskCallback;
 import com.liferay.mobile.android.v62.ddlrecordset.DDLRecordSetService;
 import com.liferay.mobile.pushnotifications.R;
 import com.liferay.mobile.screens.base.list.BaseListListener;
-import com.liferay.mobile.screens.base.list.BaseListScreenlet;
 import com.liferay.mobile.screens.context.SessionContext;
-import com.liferay.mobile.screens.ddl.list.DDLEntry;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
-import com.liferay.mobile.screens.push.AbstractPushActivity;
+import com.liferay.mobile.screens.ddl.model.Record;
+import com.liferay.mobile.screens.push.PushScreensActivity;
 import com.liferay.mobile.screens.util.LiferayLogger;
-import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
 
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-
-public class WalletActivity extends AbstractPushActivity implements BaseListListener<DDLEntry> {
+public class WalletActivity extends PushScreensActivity implements BaseListListener<Record> {
 
 	private DDLListScreenlet ddlList;
 
@@ -33,52 +29,49 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_wallet);
 
-		if (!SessionContext.hasSession()) {
+		if (!SessionContext.isLoggedIn()) {
 			startActivity(new Intent(this, LoginActivity.class));
 		}
-
-		new LiferayCrouton.Builder().withInfoColor(R.color.material_primary_crouton).build();
 
 		ddlList = (DDLListScreenlet) findViewById(R.id.wallet_default);
 		ddlList.setListener(this);
 	}
 
-	@Override
-	public void onListPageFailed(BaseListScreenlet baseListScreenlet, int i, Exception e) {
-
-	}
-
 	protected Session getDefaultSession() {
-			return SessionContext.createSessionFromCurrentSession();
-			}
+		return SessionContext.createSessionFromCurrentSession();
+	}
 
 	@Override
-	public void onListPageReceived(BaseListScreenlet baseListScreenlet, int i, List<DDLEntry> list, int i1) {
+	public void onListPageFailed(int startRow, Exception e) {
 
 	}
 
 	@Override
-	public void onListItemSelected(DDLEntry element, View view) {
+	public void onListPageReceived(int startRow, int endRow, List<Record> entries, int rowCount) {
+
+	}
+
+	@Override
+	public void onListItemSelected(Record element, View view) {
 		loadDDLForm(element);
 	}
 
-	private void loadDDLForm(DDLEntry element) {
-		final Integer recordId = (Integer) (element.getAttributes("recordId"));
-		final Integer recordSetId = (Integer) (element.getAttributes("recordSetId"));
+	private void loadDDLForm(Record element) {
+		final Integer recordId = (Integer) (element.getModelValues().get("recordId"));
+		final Integer recordSetId = (Integer) (element.getModelValues().get("recordSetId"));
 
 		try {
 			Session session = SessionContext.createSessionFromCurrentSession();
 			session.setCallback(getCallback(recordId, recordSetId));
 
 			new DDLRecordSetService(session).getRecordSet(recordSetId);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			LiferayLogger.e("error loading structure id", e);
 		}
 	}
 
-	private JSONObjectAsyncTaskCallback getCallback(final Integer recordId, final Integer recordSetId) {
-		return new JSONObjectAsyncTaskCallback() {
+	private JSONObjectCallback getCallback(final Integer recordId, final Integer recordSetId) {
+		return new JSONObjectCallback() {
 
 			@Override
 			public void onSuccess(JSONObject result) {
@@ -88,11 +81,8 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 					intent.putExtra("recordSetId", recordSetId);
 					intent.putExtra("structureId", result.getInt("DDMStructureId"));
 
-					Crouton.clearCroutonsForActivity(WalletActivity.this);
-
 					startActivity(intent);
-				}
-				catch (JSONException e) {
+				} catch (JSONException e) {
 					LiferayLogger.e("error parsing JSON", e);
 				}
 			}
@@ -109,8 +99,7 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 		runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				Crouton.clearCroutonsForActivity(WalletActivity.this);
-				LiferayCrouton.info(WalletActivity.this, "Reloading list...");
+				LiferayLogger.i("Reloading list...");
 				ddlList.loadPage(0);
 			}
 		});
@@ -124,5 +113,10 @@ public class WalletActivity extends AbstractPushActivity implements BaseListList
 	@Override
 	protected String getSenderId() {
 		return getString(R.string.sender_id);
+	}
+
+	@Override
+	public void error(Exception e, String userAction) {
+
 	}
 }

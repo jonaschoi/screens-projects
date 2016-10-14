@@ -9,7 +9,7 @@
                 android:paddingTop="@dimen/activity_vertical_margin"
                 tools:context="com.liferay.mobile.pushnotifications.activities.MainActivity">
 
-	<com.liferay.mobile.screens.webcontentdisplay.WebContentDisplayScreenlet
+	<com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		liferay:articleId="42682"

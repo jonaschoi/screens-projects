@@ -17,17 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    repositories {
-        jcenter()
-//        maven { url 'http://dl.bintray.com/nhpatt/liferay-mobile' }
-        maven { url "https://jitpack.io" }
-    }
-    packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/NOTICE'
-    }
 }
-
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -47,5 +37,6 @@ dependencies {
 }
 
 repositories {
+    maven { url "https://jitpack.io" }
     maven { url "http://dl.bintray.com/nhpatt/liferay-mobile" }
 }

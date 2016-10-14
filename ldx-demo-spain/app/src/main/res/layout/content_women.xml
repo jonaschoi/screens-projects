@@ -9,6 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         liferay:articleId="@integer/article_id_women"
-        liferay:offlinePolicy="CACHE_FIRST" />
+        liferay:cachePolicy="CACHE_FIRST" />
 
 </RelativeLayout>

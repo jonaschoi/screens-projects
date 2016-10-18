@@ -9,7 +9,7 @@
         android:allowBackup="true"
         android:icon="@drawable/liferay"
         android:label="@string/app"
-        android:theme="@style/Theme.AppCompat.Light" >
+        android:theme="@style/material_theme" >
         <activity
             android:name=".activities.LoginActivity"
             android:label="@string/login_activity" >

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -29,11 +30,9 @@ import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
 import com.liferay.mobile.screens.push.PushScreensActivity;
-import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
+import com.liferay.mobile.screens.util.LiferayLogger;
 
 import org.json.JSONObject;
-
-import de.keyboardsurfer.android.widget.crouton.Crouton;
 
 public class MenuActivity extends PushScreensActivity implements FragmentLoaded, NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -110,10 +109,12 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
         position = getIntent().getIntExtra("position", 0);
         navigationView.getMenu().getItem(position).setChecked(true);
 
-        User user = SessionContext.getLoggedUser();
+        User user = SessionContext.getCurrentUser();
 
-        ((TextView) findViewById(R.id.logged_user)).setText(user.getFirstName() + " " + user.getLastName());
-        findViewById(R.id.liferay_portrait).setOnClickListener(this);
+        View headerView = navigationView.getHeaderView(0);
+
+        ((TextView) headerView.findViewById(R.id.logged_user)).setText(user.getFirstName() + " " + user.getLastName());
+        headerView.findViewById(R.id.liferay_portrait).setOnClickListener(this);
     }
 
     @Override
@@ -235,8 +236,7 @@ public class MenuActivity extends PushScreensActivity implements FragmentLoaded,
             public void run() {
                 DDLListScreenlet ddLList = (DDLListScreenlet) findViewById(R.id.wallet_default);
                 if (ddLList != null) {
-                    Crouton.clearCroutonsForActivity(MenuActivity.this);
-                    LiferayCrouton.info(MenuActivity.this, "Reloading list...");
+                    LiferayLogger.i("Reloading list...");
                     ddLList.loadPage(0);
                 }
             }

@@ -33,32 +33,17 @@ public class MyAccountFragment extends AbstractWebContentFragment implements Web
 	}
 
 	@Override
-	public WebContent onWebContentReceived(WebContentDisplayScreenlet source, WebContent html) {
-		return null;
-	}
-
-	@Override
-	public void onWebContentFailure(WebContentDisplayScreenlet source, Exception e) {
-
-	}
-
-	@Override
 	public void onWebContentClicked(WebView.HitTestResult result, MotionEvent event) {
 		((MenuActivity) getActivity()).inflateFragmentAtPosition(1);
 	}
 
 	@Override
-	public void loadingFromCache(boolean success) {
-
+	public WebContent onWebContentReceived(WebContent html) {
+		return null;
 	}
 
 	@Override
-	public void retrievingOnline(boolean triedInCache, Exception e) {
-
-	}
-
-	@Override
-	public void storingToCache(Object object) {
+	public void error(Exception e, String userAction) {
 
 	}
 }

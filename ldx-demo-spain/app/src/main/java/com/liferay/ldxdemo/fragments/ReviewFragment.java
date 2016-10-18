@@ -19,6 +19,8 @@ import com.liferay.mobile.screens.ddl.model.Record;
 
 import org.json.JSONObject;
 
+import java.util.Map;
+
 
 public class ReviewFragment extends NamedFragment implements DDLFormListener {
 
@@ -46,7 +48,7 @@ public class ReviewFragment extends NamedFragment implements DDLFormListener {
 	}
 
 	@Override
-	public void onDDLFormRecordLoaded(Record record) {
+	public void onDDLFormRecordLoaded(Record record, Map<String, Object> valuesAndAttributes) {
 
 	}
 
@@ -75,47 +77,12 @@ public class ReviewFragment extends NamedFragment implements DDLFormListener {
 	}
 
 	@Override
-	public void onDDLFormLoadFailed(Exception e) {
-
-	}
-
-	@Override
-	public void onDDLFormRecordLoadFailed(Exception e) {
-
-	}
-
-	@Override
-	public void onDDLFormRecordAddFailed(Exception e) {
-
-	}
-
-	@Override
-	public void onDDLFormUpdateRecordFailed(Exception e) {
-
-	}
-
-	@Override
 	public void onDDLFormDocumentUploaded(DocumentField documentField, JSONObject jsonObject) {
 
 	}
 
 	@Override
 	public void onDDLFormDocumentUploadFailed(DocumentField documentField, Exception e) {
-
-	}
-
-	@Override
-	public void loadingFromCache(boolean success) {
-
-	}
-
-	@Override
-	public void retrievingOnline(boolean triedInCache, Exception e) {
-
-	}
-
-	@Override
-	public void storingToCache(Object object) {
 
 	}
 
@@ -126,5 +93,10 @@ public class ReviewFragment extends NamedFragment implements DDLFormListener {
 	@Override
 	public String getName() {
 		return "Review";
+	}
+
+	@Override
+	public void error(Exception e, String userAction) {
+
 	}
 }

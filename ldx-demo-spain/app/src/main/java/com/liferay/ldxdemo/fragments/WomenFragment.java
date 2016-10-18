@@ -134,14 +134,9 @@ public class WomenFragment extends NamedFragment implements WebContentDisplayLis
 	}
 
 	@Override
-	public WebContent onWebContentReceived(WebContentDisplayScreenlet source, WebContent webContent) {
+	public WebContent onWebContentReceived(WebContent webContent) {
 		webContent.setHtml("<div id=\"scoped-content\"><style type = \"text/css\" scoped>" + WEB_STYLE + "</style>" + webContent.getHtml() + "</div>");
 		return webContent;
-	}
-
-	@Override
-	public void onWebContentFailure(WebContentDisplayScreenlet source, Exception e) {
-
 	}
 
 	@Override
@@ -150,17 +145,7 @@ public class WomenFragment extends NamedFragment implements WebContentDisplayLis
 	}
 
 	@Override
-	public void loadingFromCache(boolean success) {
-
-	}
-
-	@Override
-	public void retrievingOnline(boolean triedInCache, Exception e) {
-
-	}
-
-	@Override
-	public void storingToCache(Object object) {
+	public void error(Exception e, String userAction) {
 
 	}
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="liferay_server">https://cloud-10-0-20-50.liferay.com/</string>
+    <string name="liferay_server">https://cloud-10-0-20-48.liferay.com/</string>
     <!--<string name="liferay_server">https://cloud-10-0-20-45.liferay.com/</string>-->
     <!--<string name="liferay_server">http://192.168.56.1:8080</string>-->
     <string name="liferay_company_id">20202</string>

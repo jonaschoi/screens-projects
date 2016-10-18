@@ -15,6 +15,8 @@ import com.liferay.mobile.screens.ddl.model.Record;
 
 import org.json.JSONObject;
 
+import java.util.Map;
+
 
 public class FormFragment extends AbstractDDLFormFragment implements DDLFormListener {
 
@@ -44,7 +46,7 @@ public class FormFragment extends AbstractDDLFormFragment implements DDLFormList
 	}
 
 	@Override
-	public void onDDLFormRecordLoaded(Record record) {
+	public void onDDLFormRecordLoaded(Record record, Map<String, Object> valuesAndAttributes) {
 
 	}
 
@@ -59,26 +61,6 @@ public class FormFragment extends AbstractDDLFormFragment implements DDLFormList
 	}
 
 	@Override
-	public void onDDLFormLoadFailed(Exception e) {
-
-	}
-
-	@Override
-	public void onDDLFormRecordLoadFailed(Exception e) {
-
-	}
-
-	@Override
-	public void onDDLFormRecordAddFailed(Exception e) {
-
-	}
-
-	@Override
-	public void onDDLFormUpdateRecordFailed(Exception e) {
-
-	}
-
-	@Override
 	public void onDDLFormDocumentUploaded(DocumentField documentField, JSONObject jsonObject) {
 
 	}
@@ -89,17 +71,7 @@ public class FormFragment extends AbstractDDLFormFragment implements DDLFormList
 	}
 
 	@Override
-	public void loadingFromCache(boolean success) {
-
-	}
-
-	@Override
-	public void retrievingOnline(boolean triedInCache, Exception e) {
-
-	}
-
-	@Override
-	public void storingToCache(Object object) {
+	public void error(Exception e, String userAction) {
 
 	}
 }

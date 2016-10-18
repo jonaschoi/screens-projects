@@ -20,14 +20,11 @@ import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.ddl.list.DDLListScreenlet;
 import com.liferay.mobile.screens.ddl.model.Record;
 import com.liferay.mobile.screens.util.LiferayLogger;
-import com.liferay.mobile.screens.viewsets.defaultviews.LiferayCrouton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
-
-import de.keyboardsurfer.android.widget.crouton.Crouton;
 
 /**
  * @author Javier Gamarra
@@ -52,20 +49,18 @@ public class WalletFragment extends AbstractWebContentFragment implements BaseLi
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		if (!SessionContext.hasSession()) {
+		if (!SessionContext.isLoggedIn()) {
 			startActivity(new Intent(getActivity(), MainActivity.class));
 		}
-
-		new LiferayCrouton.Builder().withInfoColor(R.color.material_primary_crouton).build();
 	}
 
 	@Override
-	public void onListPageFailed(BaseListScreenlet source, int page, Exception e) {
+	public void onListPageFailed(int startRow, Exception e) {
 
 	}
 
 	@Override
-	public void onListPageReceived(BaseListScreenlet source, int page, List<Record> entries, int rowCount) {
+	public void onListPageReceived(int startRow, int endRow, List<Record> entries, int rowCount) {
 
 	}
 
@@ -100,7 +95,6 @@ public class WalletFragment extends AbstractWebContentFragment implements BaseLi
 							addToBackStack(null).
 							commit();
 
-					Crouton.clearCroutonsForActivity(getActivity());
 				} catch (JSONException e) {
 					LiferayLogger.e("error parsing JSON", e);
 				}
@@ -114,25 +108,15 @@ public class WalletFragment extends AbstractWebContentFragment implements BaseLi
 	}
 
 	@Override
-	public void loadingFromCache(boolean success) {
-
-	}
-
-	@Override
-	public void retrievingOnline(boolean triedInCache, Exception e) {
-
-	}
-
-	@Override
-	public void storingToCache(Object object) {
-
-	}
-
-	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 
 		FragmentLoaded activity = (FragmentLoaded) getActivity();
 		activity.onFragmentLoaded(getView().findViewById(R.id.wallet_layout), true);
+	}
+
+	@Override
+	public void error(Exception e, String userAction) {
+
 	}
 }

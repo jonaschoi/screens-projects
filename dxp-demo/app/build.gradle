@@ -17,26 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    repositories {
-        jcenter()
-//        maven { url 'http://dl.bintray.com/nhpatt/liferay-mobile' }
-        maven { url "https://jitpack.io" }
-    }
-    packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/NOTICE'
-    }
 }
-
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
 
     compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.liferay.mobile:liferay-screens:1.4.0'
-    compile 'com.liferay.mobile:liferay-material-viewset:1.4.0'
-    compile 'com.liferay.mobile:liferay-push:1.0.8'
     compile 'com.android.support:design:23.4.0'
     compile 'org.altbeacon:android-beacon-library:2.8.1'
     compile 'com.android.support:support-v4:23.4.0'
@@ -44,4 +31,12 @@ dependencies {
     compile('de.keyboardsurfer.android.widget:crouton:1.8.1') {
         exclude module: 'support-v4'
     }
+
+    compile 'com.liferay.mobile:liferay-screens:2.0.0-beta.4'
+    compile 'com.liferay.mobile:liferay-material-viewset:2.0.0-beta.4'
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
+    maven { url "http://dl.bintray.com/nhpatt/liferay-mobile" }
 }

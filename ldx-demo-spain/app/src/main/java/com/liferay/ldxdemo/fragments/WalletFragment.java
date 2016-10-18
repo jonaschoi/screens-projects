@@ -55,12 +55,12 @@ public class WalletFragment extends NamedFragment implements BaseListListener<Re
 	}
 
 	@Override
-	public void onListPageFailed(BaseListScreenlet source, int page, Exception e) {
+	public void onListPageFailed(int startRow, Exception e) {
 
 	}
 
 	@Override
-	public void onListPageReceived(BaseListScreenlet source, int page, List<Record> entries, int rowCount) {
+	public void onListPageReceived(int startRow, int endRow, List<Record> entries, int rowCount) {
 
 	}
 
@@ -114,23 +114,14 @@ public class WalletFragment extends NamedFragment implements BaseListListener<Re
 //		};
 //	}
 
-	@Override
-	public void loadingFromCache(boolean success) {
-
-	}
-
-	@Override
-	public void retrievingOnline(boolean triedInCache, Exception e) {
-
-	}
-
-	@Override
-	public void storingToCache(Object object) {
-
-	}
 
 	@Override
 	public String getName() {
 		return "My Wallet";
+	}
+
+	@Override
+	public void error(Exception e, String userAction) {
+
 	}
 }

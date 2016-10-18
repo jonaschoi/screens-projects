@@ -38,14 +38,9 @@ public class MenFragment extends NamedFragment implements WebContentDisplayListe
 	}
 
 	@Override
-	public WebContent onWebContentReceived(WebContentDisplayScreenlet source, WebContent webContent) {
+	public WebContent onWebContentReceived(WebContent webContent) {
 		webContent.setHtml("<div id=\"scoped-content\"><style type = \"text/css\" scoped>" + WomenFragment.WEB_STYLE + "</style>" + webContent.getHtml() + "</div>");
 		return webContent;
-	}
-
-	@Override
-	public void onWebContentFailure(WebContentDisplayScreenlet source, Exception e) {
-
 	}
 
 	@Override
@@ -54,17 +49,7 @@ public class MenFragment extends NamedFragment implements WebContentDisplayListe
 	}
 
 	@Override
-	public void loadingFromCache(boolean success) {
-
-	}
-
-	@Override
-	public void retrievingOnline(boolean triedInCache, Exception e) {
-
-	}
-
-	@Override
-	public void storingToCache(Object object) {
+	public void error(Exception e, String userAction) {
 
 	}
 }

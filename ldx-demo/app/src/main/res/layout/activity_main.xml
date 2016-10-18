@@ -33,7 +33,7 @@
         android:layout_marginRight="50dp"
         android:background="@drawable/sign_up"
         android:text="@string/sign_up"
-        android:textColor="@color/material_primary"/>
+        android:textColor="@color/colorPrimary"/>
 
 
 </RelativeLayout>

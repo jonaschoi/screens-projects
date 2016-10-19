@@ -4,8 +4,8 @@
     <string name="liferay_server">https://cloud-10-0-20-48.liferay.com/</string>
     <!--<string name="liferay_server">https://cloud-10-0-20-45.liferay.com/</string>-->
     <!--<string name="liferay_server">http://192.168.56.1:8080</string>-->
-    <string name="liferay_company_id">20202</string>
-    <string name="liferay_group_id">21387</string>
+    <string name="liferay_company_id">20116</string>
+    <string name="liferay_group_id">32245</string>
 
     <string name="liferay_server_prod">1</string>
     <string name="liferay_company_id_prod">1</string>
